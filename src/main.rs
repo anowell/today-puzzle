@@ -3,7 +3,7 @@ use bitboard::BitBoard;
 use chrono::{Datelike, Days, Local, NaiveDate as Date};
 use clap::Parser;
 use piece::{PieceRef, PIECES};
-use std::fmt;
+use std::{fmt, str::FromStr};
 
 mod bitboard;
 mod piece;
@@ -85,9 +85,9 @@ impl fmt::Display for Board {
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// Date to solve in YYYY-MM-DD format (year is ignored) [default: today]
+    /// Date to solve in M-D format [default: today]
     #[arg(short, long)]
-    date: Option<Date>,
+    date: Option<MonthDay>,
 
     /// Count solutions for every day of the year
     #[arg(short, long)]
@@ -110,24 +110,51 @@ enum Print {
     Count,
 }
 
+#[derive(Clone, Copy, Debug)]
+struct MonthDay(u32, u32);
+
+impl MonthDay {
+    fn today() -> MonthDay {
+        let d = Local::now().date_naive();
+        MonthDay(d.month(), d.day())
+    }
+}
+
+impl From<Date> for MonthDay {
+    fn from(d: Date) -> MonthDay {
+        MonthDay(d.month(), d.day())
+    }
+}
+
+impl FromStr for MonthDay {
+    type Err = chrono::ParseError;
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        // Prepend 2020 since it's a leap year
+        let s2020 = format!("2020-{}", s);
+        let d = Date::parse_from_str(&s2020, "%Y-%m-%d")?;
+        Ok(MonthDay(d.month(), d.day()))
+    }
+}
+
+
 fn main() -> Result<()> {
     let args = Args::parse();
 
     if args.all_dates {
         let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
         while d.year() < 2021 {
-            solve(d.month(), d.day(), args.print);
+            solve(d.into(), args.print);
             d = d.checked_add_days(Days::new(1)).unwrap();
         }
     } else {
-        let d = args.date.unwrap_or_else(|| Local::now().date_naive());
-        solve(d.month(), d.day(), args.print);
+        let d = args.date.unwrap_or_else(MonthDay::today);
+        solve(d, args.print);
     }
 
     Ok(())
 }
 
-fn solve(month: u32, day: u32, print: Print) -> u32 {
+fn solve(MonthDay(month, day): MonthDay, print: Print) -> u32 {
     let mut dfs = vec![Board::from_month_day(month, day)];
     let mut solutions = 0;
 

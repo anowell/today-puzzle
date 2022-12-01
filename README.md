@@ -59,14 +59,14 @@ $ target/release/today-puzzle --help
 Usage: today-puzzle [OPTIONS]
 
 Options:
-  -d, --date <DATE>    Date to solve in YYYY-MM-DD format (year is ignored) [default: today]
+  -d, --date <DATE>    Date to solve in MM-DD format [default: today]
   -a, --all-dates      Count solutions for every day of the year
   -p, --print <PRINT>  Specifies with solutions to print [default: first] [possible values: first, summary, all, count]
   -h, --help           Print help information
 
 
 # Run to solve a specific date
-$ target/release/today-puzzle --date 2022-12-25
+$ target/release/today-puzzle --date 12-25
 **** 12-25 ****
 A A G G G G X X
 A A E E G X X X

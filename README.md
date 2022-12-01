@@ -19,7 +19,7 @@ Ju Au Se Oc No De XX XX
 29 30 31 XX XX XX XX XX
 ```
 
-This program will solve it for a given day, but outputting a solution like this (e.g. for Dec 25):
+This program will solve it for a given day by outputting a solution like this (e.g. for Dec 25):
 
 ```
 A A G G G G X X
@@ -34,7 +34,9 @@ X X X X X X X X
 
 In the solution, 8 piece shapes are denoted by letters A-H. X is a space not covered by the piece (i.e. the target date or outside the board).
 
-If you're just looking for solutions, [first_solutions.txt](first_solutions.txt) has one solution for each day of the year.
+If you're just looking for solutions:
+- [first_solutions.txt](first_solutions.txt) has one solution for each day of the year
+- [count_solutions.txt](count_solutions.txt) has the number of solutions for each day of the year
 
 ### Notes
 

@@ -1,0 +1,4026 @@
+
+**** 01-01 ****
+X F F C C C X X 
+B B F F F C X X 
+X B H D D C G X 
+B B H H D G G X 
+A A H H D D G X 
+A A E E E E G X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 01-02 ****
+X C C C E G X X 
+B B B C E G X X 
+B X B C E G G X 
+A A D E E G H X 
+A A D D D H H X 
+A A F F D H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-03 ****
+X F F C C C X X 
+A A F F F C X X 
+A A X E E C D X 
+A A G E D D D X 
+B B G E D H H X 
+B G G E H H H X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 01-04 ****
+X E E B B B X X 
+A A E B D B X X 
+A A E X D D D X 
+A A E F F F D X 
+C H H H G F F X 
+C H H G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-05 ****
+X F F C C C X X 
+A A F F F C X X 
+A A E E X C D X 
+A A G E D D D X 
+B B G E D H H X 
+B G G E H H H X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 01-06 ****
+X D D B B B X X 
+A A D B C B X X 
+A A D D C X G X 
+A A C C C G G X 
+H H E E E E G X 
+H H F F F E G X 
+H F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-07 ****
+X D D B B B X X 
+A A D B E B X X 
+A A D D E F X X 
+A A G C E F F X 
+H G G C E E F X 
+H H G C C C F X 
+H H G X X X X X 
+X X X X X X X X 
+
+
+**** 01-08 ****
+X F F F D D X X 
+F F C C C D X X 
+G G G G C D D X 
+X G E E C B B X 
+A A E H H H B X 
+A A E H H B B X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 01-09 ****
+X F F F D D X X 
+F F H H H D X X 
+B B B H H D D X 
+B X B G C C C X 
+A A G G G G C X 
+A A E E E E C X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 01-10 ****
+X G G G G F X X 
+A A G D D F X X 
+A A B B D F F X 
+A A X B D D F X 
+C E B B H H H X 
+C E E E E H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-11 ****
+X D D B B B X X 
+A A D B F B X X 
+A A D D F F E X 
+A A G X C F E X 
+G G G G C F E X 
+H H C C C E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-12 ****
+X E E H H H X X 
+A A E H H G X X 
+A A E G G G G X 
+A A E D X B B X 
+C D D D F F B X 
+C D F F F B B X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-13 ****
+X F F C C C X X 
+A A F F F C X X 
+A A H D D C E X 
+A A H H D X E X 
+B B H H D D E X 
+B G G G G E E X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 01-14 ****
+X F F F D D X X 
+A A G F F D X X 
+A A G E E D D X 
+A A G G E H X X 
+C B G B E H H X 
+C B B B E H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-15 ****
+X E E B B B X X 
+A A E B G B X X 
+A A E G G G G X 
+A A E D C C C X 
+X F F D D D C X 
+H H F F F D C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-16 ****
+X D D B B B X X 
+A A D B H B X X 
+A A D D H H E X 
+A A F F H H E X 
+C X G F F F E X 
+C G G G G E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-17 ****
+X E E B B B X X 
+A A E B G B X X 
+A A E G G G G X 
+A A E D C C C X 
+H H X D D D C X 
+H H F F F D C X 
+H F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-18 ****
+X E E E E G X X 
+A A B B E G X X 
+A A B D D G G X 
+A A B B D G C X 
+F F F X D D C X 
+H H F F C C C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-19 ****
+X D D B B B X X 
+A A D B F B X X 
+A A D D F E E X 
+A A G C F F E X 
+H G G C X F E X 
+H H G C C C E X 
+H H G X X X X X 
+X X X X X X X X 
+
+
+**** 01-20 ****
+X F F C C C X X 
+A A F F F C X X 
+A A H H H C D X 
+A A H H D D D X 
+G G G G D X E X 
+B G B E E E E X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 01-21 ****
+X C C C D D X X 
+A A G C E D X X 
+A A G C E D D X 
+A A G G E B B X 
+H H G E E B X X 
+H H F F F B B X 
+H F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-22 ****
+X D D B B B X X 
+A A D B C B X X 
+A A D D C E E X 
+A A C C C H E X 
+G G G G H H E X 
+X G F F H H E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-23 ****
+X D D B B B X X 
+A A D B F B X X 
+A A D D F E E X 
+A A H H F F E X 
+C H H H G F E X 
+C X G G G G E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-24 ****
+X D D C C C X X 
+A A D E E C X X 
+A A D D E C G X 
+A A F F E G G X 
+F F F B E B G X 
+H H X B B B G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-25 ****
+X D D B B B X X 
+A A D B F B X X 
+A A D D F F E X 
+A A C C C F E X 
+G G G G C F E X 
+H H G X C E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-26 ****
+X E E B B B X X 
+A A E B G B X X 
+A A E G G G G X 
+A A E D C C C X 
+F F F D D D C X 
+H H F F X D C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 01-27 ****
+X G G G G F X X 
+A A G D D F X X 
+A A E E D F F X 
+A A H E D D F X 
+C H H E B B B X 
+C H H E B X B X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 01-28 ****
+X H H H E E X X 
+A A H H E F X X 
+A A D D E F F X 
+A A G D E C F X 
+B B G D D C F X 
+B G G C C C X X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 01-29 ****
+X E E B B B X X 
+A A E B G B X X 
+A A E G G G G X 
+A A E D C C C X 
+H H H D D D C X 
+H H F F F D C X 
+X F F X X X X X 
+X X X X X X X X 
+
+
+**** 01-30 ****
+X G G G G F X X 
+A A G D D F X X 
+A A C E D F F X 
+A A C E D D F X 
+C C C E H H H X 
+B B B E E H H X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 01-31 ****
+X E E B B B X X 
+A A E B G B X X 
+A A E G G G G X 
+A A E D C C C X 
+H F F D D D C X 
+H H F F F D C X 
+H H X X X X X X 
+X X X X X X X X 
+
+
+**** 02-01 ****
+B X B C C C X X 
+B B B D D C X X 
+X H H H D C E X 
+A A H H D D E X 
+A A G G G G E X 
+A A F F G E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 02-02 ****
+G X B B H H X X 
+G G B H H H X X 
+G X B B F F F X 
+G E E F F D C X 
+A A E D D D C X 
+A A E D C C C X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 02-03 ****
+E X G G G G X X 
+E E E E G F X X 
+A A X B B F F X 
+A A C B D D F X 
+A A C B B D F X 
+H H C C C D D X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-04 ****
+H X E E E E X X 
+H H F F F E X X 
+H H D X F F G X 
+A A D D D G G X 
+A A C B D B G X 
+A A C B B B G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-05 ****
+D X G G G G X X 
+D D D G B B X X 
+A A D F X B C X 
+A A F F B B C X 
+A A F E C C C X 
+H H F E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-06 ****
+D X G G G G X X 
+D D D G B B X X 
+A A D F B X C X 
+A A F F B B C X 
+A A F E C C C X 
+H H F E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-07 ****
+D X G G G G X X 
+D D D B G B X X 
+A A D B B B X X 
+A A F F C C C X 
+A A E F F F C X 
+H H E E E E C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-08 ****
+C X H H D D X X 
+C H H H D F X X 
+C C C D D F F X 
+X E E B B B F X 
+A A E B G B F X 
+A A E G G G G X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 02-09 ****
+G X F F F D X X 
+G F F D D D X X 
+G G B D B H H X 
+G X B B B H H X 
+A A C C C H E X 
+A A C E E E E X 
+A A C X X X X X 
+X X X X X X X X 
+
+
+**** 02-10 ****
+H X E E E E X X 
+H H F D D E X X 
+H H F F D B B X 
+A A X F D D B X 
+A A C F G B B X 
+A A C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-11 ****
+C X E E E E X X 
+C G G G G E X X 
+C C C G B B B X 
+A A D X B H B X 
+A A D D D H H X 
+A A F F D H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 02-12 ****
+E X H B B B X X 
+E H H B F B X X 
+E H H F F D D X 
+E E G F X D C X 
+A A G F D D C X 
+A A G G C C C X 
+A A G X X X X X 
+X X X X X X X X 
+
+
+**** 02-13 ****
+H X G B B B X X 
+H H G B D B X X 
+H H G G D D D X 
+A A G F F X D X 
+A A C E F F F X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-14 ****
+H X G B B B X X 
+H H G B F B X X 
+H H G G F D D X 
+A A G F F D X X 
+A A C F D D E X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-15 ****
+G X E E D D X X 
+G G E A A D X X 
+G C E A A D D X 
+G C E A A B B X 
+X C C C F F B X 
+H H F F F B B X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-16 ****
+F X G B B B X X 
+F F G B D B X X 
+E F G G D D D X 
+E F G A A H D X 
+E X C A A H H X 
+E E C A A H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-17 ****
+B X B C C C X X 
+B B B G F C X X 
+H H H G F C E X 
+H H G G F F E X 
+A A X G D F E X 
+A A D D D E E X 
+A A D X X X X X 
+X X X X X X X X 
+
+
+**** 02-18 ****
+B X B H E E X X 
+B B B H H E X X 
+C C C H H E G X 
+A A C D D E G X 
+A A C X D G G X 
+A A F F D D G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 02-19 ****
+H X G B B B X X 
+H H G B D B X X 
+H H G G D D D X 
+A A G F F F D X 
+A A C E X F F X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 02-20 ****
+H X C C C G X X 
+H H C B B G X X 
+H H C B G G E X 
+A A D B B G E X 
+A A D D D X E X 
+A A F F D E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 02-21 ****
+D X G G G G X X 
+D D D B G B X X 
+A A D B B B E X 
+A A C E E E E X 
+A A C F F F X X 
+H H C C C F F X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-22 ****
+B X B F D D X X 
+B B B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+X H H E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-23 ****
+D X C C C E X X 
+D D D F C E X X 
+A A D F C E G X 
+A A F F E E G X 
+A A F H H G G X 
+B X B H H H G X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 02-24 ****
+B X B F D D X X 
+B B B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+H H X E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-25 ****
+B X B C C C X X 
+B B B C D D X X 
+A A G C D F E X 
+A A G D D F E X 
+A A G G F F E X 
+H H G X F E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-26 ****
+G X F H D D X X 
+G G F H H D X X 
+G F F H H D D X 
+G F E E C C C X 
+A A E B B B C X 
+A A E B X B C X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 02-27 ****
+B X B C C C X X 
+B B B D D C X X 
+A A E F D C G X 
+A A E F D D G X 
+A A E F F G G X 
+H H E E F X G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-28 ****
+B X B D D F X X 
+B B B D C F X X 
+A A D D C F F X 
+A A C C C G F X 
+A A E G G G G X 
+H H E E E E X X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 02-29 ****
+B X B F D D X X 
+B B B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+H H H E E E E X 
+X H H X X X X X 
+X X X X X X X X 
+
+
+**** 03-01 ****
+H H X C C C X X 
+H H H C B B X X 
+X A A C B E E X 
+G A A D B B E X 
+G A A D D D E X 
+G G F F F D E X 
+G F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-02 ****
+F F X E E G X X 
+C F F F E G X X 
+C X B B E G G X 
+C C C B E G H X 
+A A B B D H H X 
+A A D D D H H X 
+A A D X X X X X 
+X X X X X X X X 
+
+
+**** 03-03 ****
+A A X H H H X X 
+A A B B H H X X 
+A A X B C C C X 
+G E B B D D C X 
+G E E E E D C X 
+G G F F F D D X 
+G F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-04 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G X F F E X 
+D D G G H F E X 
+C D G H H F E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-05 ****
+A A X G D D X X 
+A A E G G D X X 
+A A E G X D D X 
+B B E G C C C X 
+B E E H H H C X 
+B B F F H H C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-06 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G G F X E X 
+D D G H F F E X 
+C D G H H F E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-07 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B D B C X X 
+E D D D F F H X 
+E D F F F H H X 
+E G G G G H H X 
+E E G X X X X X 
+X X X X X X X X 
+
+
+**** 03-08 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B D B C G X 
+X D D D F F G X 
+H D F F F G G X 
+H H E E E E G X 
+H H E X X X X X 
+X X X X X X X X 
+
+
+**** 03-09 ****
+A A X B B B X X 
+A A C B G B X X 
+A A C G G G G X 
+D X C C C F F X 
+D D D F F F E X 
+H H D E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 03-10 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B G B C D X 
+E F X G D D D X 
+E F G G D H H X 
+E F F G H H H X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 03-11 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G G F F E X 
+D D G X H F E X 
+C D G H H F E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-12 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G G F F E X 
+D D G H X F E X 
+C D G H H F E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-13 ****
+A A X H H F X X 
+A A H H H F X X 
+A A B B B F F X 
+D D B G B X F X 
+C D G G G G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-14 ****
+A A X H H H X X 
+A A G F H H X X 
+A A G F F B B X 
+D D G G F B X X 
+C D G E F B B X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-15 ****
+A A X C C C X X 
+A A H D D C X X 
+A A H H D C E X 
+B B H H D D E X 
+X B G G G G E X 
+B B F F G E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-16 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G G F D D X 
+E E G F F D C X 
+E X G F D D C X 
+E H H H C C C X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 03-17 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B D B C E X 
+G D D D H H E X 
+G D X H H H E X 
+G G F F F E E X 
+G F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-18 ****
+A A X C C C X X 
+A A E C H H X X 
+A A E C H H G X 
+B B E D D H G X 
+B E E X D G G X 
+B B F F D D G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-19 ****
+A A X C C C X X 
+A A F D D C X X 
+A A F F D C G X 
+B B B F D D G X 
+B H B F X G G X 
+H H E E E E G X 
+H H E X X X X X 
+X X X X X X X X 
+
+
+**** 03-20 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B G B C E X 
+F F G G G G E X 
+H F F F D X E X 
+H H D D D E E X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 03-21 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B H B C D X 
+E F H H D D D X 
+E F H H D G X X 
+E F F G G G G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 03-22 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B E B C D X 
+E E E E D D D X 
+G G G G D H H X 
+X G F F H H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-23 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B G B C D X 
+E F G G D D D X 
+E F F G D H H X 
+E X F G H H H X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 03-24 ****
+A A X C C C X X 
+A A H H H C X X 
+A A H H F C G X 
+E E D D F G G X 
+E B B D F F G X 
+E B X D D F G X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 03-25 ****
+A A X B B B X X 
+A A G B F B X X 
+A A G G F F E X 
+D D G H H F E X 
+C D G H H F E X 
+C D D X H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 03-26 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B D B C E X 
+G F F D D D E X 
+G G F F F D E X 
+G H H H X E E X 
+G H H X X X X X 
+X X X X X X X X 
+
+
+**** 03-27 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B H B C G X 
+E F H H D D G X 
+E F H H D G G X 
+E F F D D X G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 03-28 ****
+A A X C C C X X 
+A A B B B C X X 
+A A B E B C D X 
+E E E E D D D X 
+G G G G D F F X 
+H H G F F F X X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 03-29 ****
+A A X C C C X X 
+A A E H H C X X 
+A A E H H C G X 
+B B E D H G G X 
+B E E D D D G X 
+B B F F F D G X 
+X F F X X X X X 
+X X X X X X X X 
+
+
+**** 03-30 ****
+A A X F F F X X 
+A A F F E E X X 
+A A D C E H H X 
+D D D C E H H X 
+D C C C E G H X 
+B B B G G G G X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 03-31 ****
+A A X B B B X X 
+A A C B G B X X 
+A A C G G G G X 
+C C C D D H H X 
+E E E E D H H X 
+E F F F D D H X 
+F F X X X X X X 
+X X X X X X X X 
+
+
+**** 04-01 ****
+H H G X D D X X 
+H H G B B D X X 
+X H G G B D D X 
+A A G B B F F X 
+A A C F F F E X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-02 ****
+C C C X D D X X 
+C E E E E D X X 
+C X B B E D D X 
+A A B G G G G X 
+A A B B G H H X 
+A A F F H H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 04-03 ****
+A A B X B G X X 
+A A B B B G X X 
+A A X E E G G X 
+C C C D E G H X 
+C D D D E H H X 
+C D F F E H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 04-04 ****
+A A E X H H X X 
+A A E H H H X X 
+A A E X B B G X 
+D D E E B G G X 
+C D F F B B G X 
+C D D F F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-05 ****
+F F F X H H X X 
+A A F F H H X X 
+A A C D X H E X 
+A A C D D D E X 
+B B C C C D E X 
+B G G G G E E X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 04-06 ****
+F F F X H H X X 
+A A F F H H X X 
+A A C D H X E X 
+A A C D D D E X 
+B B C C C D E X 
+B G G G G E E X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 04-07 ****
+A A G X D D X X 
+A A G G D C X X 
+A A G D D C X X 
+B B G C C C H X 
+B E E E E H H X 
+B B F F E H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 04-08 ****
+A A B X B F X X 
+A A B B B F X X 
+A A D D F F G X 
+X H H D F G G X 
+C H H D D E G X 
+C H E E E E G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-09 ****
+A A B X B G X X 
+A A B B B G X X 
+A A F D D G G X 
+E X F F D G C X 
+E H H F D D C X 
+E H H F C C C X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 04-10 ****
+A A B X B G X X 
+A A B B B G X X 
+A A C C C G G X 
+E E X D C G H X 
+E D D D C H H X 
+E D F F F H H X 
+E F F X X X X X 
+X X X X X X X X 
+
+
+**** 04-11 ****
+A A G X H H X X 
+A A G H H H X X 
+A A G G C C C X 
+B B G X D D C X 
+B E E E E D C X 
+B B F F E D D X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 04-12 ****
+A A B X B G X X 
+A A B B B G X X 
+A A D C G G E X 
+D D D C X G E X 
+D F F C C C E X 
+H H F F F E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 04-13 ****
+A A G X D D X X 
+A A G G F D X X 
+A A G F F D D X 
+E E G F C X H X 
+E B B F C H H X 
+E B C C C H H X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-14 ****
+A A G X D D X X 
+A A G G F D X X 
+A A G F F D D X 
+E E G F C H X X 
+E B B F C H H X 
+E B C C C H H X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-15 ****
+A A B X B C X X 
+A A B B B C X X 
+A A D C C C G X 
+F F D D D G G X 
+X F F F D E G X 
+H H E E E E G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 04-16 ****
+A A G X D D X X 
+A A G G F D X X 
+A A G F F D D X 
+B B G F H H H X 
+B X C F H H E X 
+B B C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-17 ****
+A A B X B G X X 
+A A B B B G X X 
+A A C C C G G X 
+E F D D C G H X 
+E F X D C H H X 
+E F F D D H H X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 04-18 ****
+A A F X H H X X 
+A A F H H H X X 
+A A F F B B G X 
+C C C F B G G X 
+C D D X B B G X 
+C D E E E E G X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 04-19 ****
+A A B X B E X X 
+A A B B B E X X 
+A A H H H E G X 
+D D H H E E G X 
+C D F F X G G X 
+C D D F F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-20 ****
+A A B X B C X X 
+A A B B B C X X 
+A A F C C C G X 
+E E F D D G G X 
+E H F F D X G X 
+E H H F D D G X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 04-21 ****
+A A G X H H X X 
+A A G H H H X X 
+A A G G F F F X 
+E E G F F B B X 
+E C C C D B X X 
+E C D D D B B X 
+E C D X X X X X 
+X X X X X X X X 
+
+
+**** 04-22 ****
+A A G X D D X X 
+A A G B B D X X 
+A A G G B D D X 
+H H G B B F F X 
+H H C F F F E X 
+X H C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-23 ****
+A A H X D D X X 
+A A H H F D X X 
+A A H H F D D X 
+E E E E F F C X 
+E G G G G F C X 
+B X B G C C C X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-24 ****
+A A G X D D X X 
+A A G G F D X X 
+A A G F F D D X 
+E E G F C C C X 
+E B B F H H C X 
+E B X H H H C X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-25 ****
+A A B X B E X X 
+A A B B B E X X 
+A A H H H E G X 
+D D H H E E G X 
+C D F F F G G X 
+C D D X F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 04-26 ****
+A A H X D D X X 
+A A H H C D X X 
+A A H H C D D X 
+E F C C C B B X 
+E F G G G G B X 
+E F F G X B B X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 04-27 ****
+A A G X D D X X 
+A A G G F D X X 
+A A G F F D D X 
+E E G F C H H X 
+E B B F C H H X 
+E B C C C X H X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-28 ****
+A A F X H H X X 
+A A F H H H X X 
+A A F F B B B X 
+C C C F B G B X 
+C D D G G G G X 
+C D E E E E X X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 04-29 ****
+A A F X D D X X 
+A A F E E D X X 
+A A F F E D D X 
+C C C F E H H X 
+C B B G E H H X 
+C B G G G G H X 
+X B B X X X X X 
+X X X X X X X X 
+
+
+**** 04-30 ****
+A A H X D D X X 
+A A H H F D X X 
+A A H H F D D X 
+E E E E F F C X 
+E G G G G F C X 
+B B B G C C C X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 05-01 ****
+E E E E X H X X 
+E C C C H H X X 
+X D D C H H G X 
+A A D C B B G X 
+A A D D B G G X 
+A A F F B B G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-02 ****
+E E E E X F X X 
+B B B E G F X X 
+B X B G G F F X 
+A A D D G H F X 
+A A C D G H H X 
+A A C D D H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-03 ****
+E H H B X B X X 
+E H H B B B X X 
+E H X F C C C X 
+E E G F D D C X 
+A A G F F D C X 
+A A G G F D D X 
+A A G X X X X X 
+X X X X X X X X 
+
+
+**** 05-04 ****
+A A E B X B X X 
+A A E B B B X X 
+A A E X H H G X 
+D D E E H H G X 
+C D F F H G G X 
+C D D F F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-05 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D X F F X 
+H H E F F F C X 
+H H G G G G C X 
+B H B G C C C X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-06 ****
+C C C B X B X X 
+A A C B B B X X 
+A A C E F X G X 
+A A D E F G G X 
+D D D E F F G X 
+D H H E E F G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 05-07 ****
+A A D D X G X X 
+A A C D G G X X 
+A A C D D G X X 
+B B C C C G H X 
+B E E E E H H X 
+B B F F E H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-08 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D C C C X 
+X F E B B B C X 
+F F H B G B C X 
+F H H G G G G X 
+F H H X X X X X 
+X X X X X X X X 
+
+
+**** 05-09 ****
+A A G B X B X X 
+A A G B B B X X 
+A A G G F F F X 
+E X G F F D C X 
+E H H D D D C X 
+E H H D C C C X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 05-10 ****
+A A F B X B X X 
+A A F B B B X X 
+A A F F H H H X 
+D D X F G H H X 
+C D G G G G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-11 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D C C C X 
+H H E X F F C X 
+H H F F F G C X 
+B H B G G G G X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-12 ****
+G G G G X D X X 
+B G B D D D X X 
+B B B D H H H X 
+A A F F X H H X 
+A A C F F F E X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-13 ****
+A A H H X F X X 
+A A H H H F X X 
+A A B B B F F X 
+D D B G B X F X 
+C D G G G G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-14 ****
+A A B B X G X X 
+A A B E E G X X 
+A A B B E G G X 
+C C C D E G X X 
+C D D D E H H X 
+C D F F H H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-15 ****
+A A E E X F X X 
+A A E D D F X X 
+A A E G D F F X 
+B B E G D D F X 
+X B C G G H H X 
+B B C G H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-16 ****
+A A E E X F X X 
+A A E D D F X X 
+A A E G D F F X 
+B B E G D D F X 
+B X C G G H H X 
+B B C G H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-17 ****
+A A E B X B X X 
+A A E B B B X X 
+A A E F C C C X 
+G E E F D D C X 
+G G X F F D C X 
+G H H H F D D X 
+G H H X X X X X 
+X X X X X X X X 
+
+
+**** 05-18 ****
+A A B B X F X X 
+A A B D D F X X 
+A A B B D F F X 
+G G G G D D F X 
+C E G X H H H X 
+C E E E E H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 05-19 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D C C C X 
+H H E F F F C X 
+H H F F X G C X 
+B H B G G G G X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-20 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D H H H X 
+B B E G H H C X 
+B G G G G X C X 
+B B F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-21 ****
+A A B B X F X X 
+A A B D D F X X 
+A A B B D F F X 
+E E E E D D F X 
+E H C C C G X X 
+H H C G G G G X 
+H H C X X X X X 
+X X X X X X X X 
+
+
+**** 05-22 ****
+G G G G X D X X 
+A A G D D D X X 
+A A C D F F F X 
+A A C F F H H X 
+B B C C C H H X 
+X B E E E E H X 
+B B E X X X X X 
+X X X X X X X X 
+
+
+**** 05-23 ****
+A A H H X F X X 
+A A H H F F X X 
+A A D H F E E X 
+D D D G F C E X 
+D G G G G C E X 
+B X B C C C E X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-24 ****
+A A H H X G X X 
+A A H H H G X X 
+A A F D D G G X 
+E E F F D G C X 
+E B B F D D C X 
+E B X F C C C X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-25 ****
+A A H H X F X X 
+A A H H F F X X 
+A A H E F D D X 
+E E E E F D C X 
+G G G G D D C X 
+B G B X C C C X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-26 ****
+A A B B X G X X 
+A A B E E G X X 
+A A B B E G G X 
+C C C D E G H X 
+C D D D E H H X 
+C D F F X H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-27 ****
+A A E E X D X X 
+A A E D D D X X 
+A A E D C C C X 
+G B E B C H H X 
+G B B B C H H X 
+G G F F F X H X 
+G F F X X X X X 
+X X X X X X X X 
+
+
+**** 05-28 ****
+A A D D X G X X 
+A A C D G G X X 
+A A C D D G F X 
+E E C C C G F X 
+E B B H H F F X 
+E B H H H F X X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-29 ****
+A A H H X F X X 
+A A H H H F X X 
+A A D D F F G X 
+C C C D F G G X 
+C B B D D E G X 
+C B E E E E G X 
+X B B X X X X X 
+X X X X X X X X 
+
+
+**** 05-30 ****
+A A H H X F X X 
+A A H H F F X X 
+A A D H F E E X 
+D D D G F C E X 
+D G G G G C E X 
+B B B C C C E X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 05-31 ****
+A A H H X F X X 
+A A H H F F X X 
+A A H G F D D X 
+E B B G F D C X 
+E B G G D D C X 
+E B B G C C C X 
+E E X X X X X X 
+X X X X X X X X 
+
+
+**** 06-01 ****
+E E E E G X X X 
+E B B B G G X X 
+X B H B G D D X 
+A A H H G D C X 
+A A H H D D C X 
+A A F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 06-02 ****
+E E E E G X X X 
+B B B E G G X X 
+B X B H G D D X 
+A A H H G D C X 
+A A H H D D C X 
+A A F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 06-03 ****
+A A B B B X X X 
+A A B F B G X X 
+A A X F G G E X 
+D D F F H G E X 
+C D F H H G E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-04 ****
+A A C C C X X X 
+A A D D C F X X 
+A A D X C F F X 
+E D D B B B F X 
+E H H B G B F X 
+E H H G G G G X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 06-05 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F X G E X 
+D D F H G G E X 
+C D F H H G E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-06 ****
+A A F F F X X X 
+A A D D F F X X 
+A A D E E X G X 
+H D D E B B G X 
+H H C E B G G X 
+H H C E B B G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-07 ****
+A A B B B X X X 
+A A B G B F X X 
+A A G G F F X X 
+C C C G F H H X 
+C D D G F H H X 
+C D E E E E H X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 06-08 ****
+A A H H F X X X 
+A A H H F F X X 
+A A H D D F E X 
+X B B B D F E X 
+C B G B D D E X 
+C G G G G E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-09 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B F B G X 
+E X D D F G G X 
+E H H D F F G X 
+E H H D D F G X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 06-10 ****
+A A C C C X X X 
+A A C F F F X X 
+A A C D D F F X 
+E E X D B B B X 
+E H D D B G B X 
+E H H G G G G X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 06-11 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F G G E X 
+D D F X H G E X 
+C D F H H G E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-12 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F G G E X 
+D D F H X G E X 
+C D F H H G E X 
+C D D H H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-13 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B D B G X 
+E F D D D X G X 
+E F D H H G G X 
+E F F H H H G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 06-14 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F H G G X 
+D D F H H G X X 
+C D F H H G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-15 ****
+A A C C C X X X 
+A A C B B G X X 
+A A C B G G E X 
+F F F B B G E X 
+X H F F D G E X 
+H H D D D E E X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 06-16 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B F B G X 
+E E D D F G G X 
+E X H D F F G X 
+E H H D D F G X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 06-17 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B F B G X 
+E E D D F G G X 
+E H X D F F G X 
+E H H D D F G X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 06-18 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B D B H X 
+E F D D D H H X 
+E F D X G H H X 
+E F F G G G G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 06-19 ****
+A A F F F X X X 
+A A D D F F X X 
+A A D C B B B X 
+E D D C B H B X 
+E C C C X H H X 
+E G G G G H H X 
+E E G X X X X X 
+X X X X X X X X 
+
+
+**** 06-20 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B D B G X 
+E F D D D G G X 
+E F D H H X G X 
+E F F H H H G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 06-21 ****
+A A F F F X X X 
+A A D D F F X X 
+A A D E E E E X 
+H D D B B B E X 
+H H C B G B X X 
+H H C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-22 ****
+A A B B B X X X 
+A A B H B G X X 
+A A D H H G G X 
+D D D H H G C X 
+D E E E E G C X 
+X E F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 06-23 ****
+A A C C C X X X 
+A A H H C G X X 
+A A H H C G E X 
+F F F H G G E X 
+B B F F D G E X 
+B X D D D E E X 
+B B D X X X X X 
+X X X X X X X X 
+
+
+**** 06-24 ****
+A A C C C X X X 
+A A C D D F X X 
+A A C G D F F X 
+E E G G D D F X 
+E B B G H H F X 
+E B X G H H H X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 06-25 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F G G E X 
+D D F H H G E X 
+C D F H H G E X 
+C D D X H E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-26 ****
+A A B B B X X X 
+A A B F B G X X 
+A A F F G G E X 
+D D F H H G E X 
+C D F H H G E X 
+C D D H X E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 06-27 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B D B G X 
+E F D D D G G X 
+E F D H H H G X 
+E F F H H X G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 06-28 ****
+A A B B B X X X 
+A A B G B F X X 
+A A G G F F H X 
+C C C G F H H X 
+C D D G F H H X 
+C D E E E E X X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 06-29 ****
+A A H H H X X X 
+A A E H H G X X 
+A A E G G G G X 
+B B E D C C C X 
+B E E D D D C X 
+B B F F F D C X 
+X F F X X X X X 
+X X X X X X X X 
+
+
+**** 06-30 ****
+A A C C C X X X 
+A A C B B B X X 
+A A C B H B E X 
+G F D D H H E X 
+G F F D H H E X 
+G G F D D E E X 
+G X F X X X X X 
+X X X X X X X X 
+
+
+**** 07-01 ****
+D D B B B F X X 
+X D B G B F X X 
+X D D G E F F X 
+A A G G E H F X 
+A A C G E H H X 
+A A C E E H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-02 ****
+G G G G D D X X 
+X G A A E D X X 
+F X A A E D D X 
+F F A A E B B X 
+C F H H E E B X 
+C F H H H B B X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-03 ****
+B B E E E E X X 
+X B E D D F X X 
+B B X G D F F X 
+A A G G D D F X 
+A A C G H H F X 
+A A C G H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-04 ****
+G G G G D D X X 
+X G B B B D X X 
+A A B X B D D X 
+A A F F C C C X 
+A A E F F F C X 
+H H E E E E C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-05 ****
+B B E E E E X X 
+X B E C C C X X 
+B B F F X C G X 
+F F F D D C G X 
+A A H H D G G X 
+A A H H D D G X 
+A A H X X X X X 
+X X X X X X X X 
+
+
+**** 07-06 ****
+B B E E E E X X 
+X B C C C E X X 
+B B C D D X G X 
+A A C D H G G X 
+A A D D H H G X 
+A A F F H H G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-07 ****
+B B G G G G X X 
+X B E E G D X X 
+B B E D D D X X 
+A A E D C C C X 
+A A E H H H C X 
+A A F F H H C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-08 ****
+B B F C C C X X 
+X B F D D C X X 
+B B F F D C G X 
+X E E F D D G X 
+A A E H H G G X 
+A A E H H H G X 
+A A E X X X X X 
+X X X X X X X X 
+
+
+**** 07-09 ****
+H H H B B B X X 
+X H H B F B X X 
+E E E E F D D X 
+E X G F F D C X 
+A A G F D D C X 
+A A G G C C C X 
+A A G X X X X X 
+X X X X X X X X 
+
+
+**** 07-10 ****
+E E E E D D X X 
+X H H E D F X X 
+H H H D D F F X 
+A A X B B B F X 
+A A C B G B F X 
+A A C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-11 ****
+E E E E D D X X 
+X H H E D G X X 
+H H H D D G G X 
+A A B X B G C X 
+A A B B B G C X 
+A A F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-12 ****
+F F F H H H X X 
+X G F F H H X X 
+G G G G B B E X 
+A A D D X B E X 
+A A C D B B E X 
+A A C D D E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-13 ****
+H H H B B B X X 
+X H H B D B X X 
+G G G G D D D X 
+A A G F F X D X 
+A A C E F F F X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-14 ****
+H H H B B B X X 
+X H H B F B X X 
+G G G G F D D X 
+A A G F F D X X 
+A A C F D D E X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-15 ****
+F F E E E E X X 
+X F F F D E X X 
+G G G G D D D X 
+B B G A A H D X 
+X B C A A H H X 
+B B C A A H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-16 ****
+F F E E E E X X 
+X F F F D E X X 
+G G G G D D D X 
+B B G A A H D X 
+B X C A A H H X 
+B B C A A H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-17 ****
+B B C C C D X X 
+X B C D D D X X 
+B B C D G E E X 
+A A G G G G E X 
+A A X H H H E X 
+A A F F H H E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-18 ****
+E E E E D D X X 
+X H H E D G X X 
+H H H D D G G X 
+A A B B B G C X 
+A A B X B G C X 
+A A F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-19 ****
+H H H B B B X X 
+X H H B D B X X 
+G G G G D D D X 
+A A G F F F D X 
+A A C E X F F X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 07-20 ****
+G G G G B B X X 
+X G C C C B X X 
+A A C F B B D X 
+A A C F D D D X 
+A A F F D X E X 
+H H F E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-21 ****
+G G G G D D X X 
+X G B B B D X X 
+A A B E B D D X 
+A A C E E E E X 
+A A C F F F X X 
+H H C C C F F X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-22 ****
+E E E E D D X X 
+X A A E D F X X 
+C A A D D F F X 
+C A A B B B F X 
+C C C B G B F X 
+X H H G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-23 ****
+G G G G D D X X 
+X G C C C D X X 
+A A H H C D D X 
+A A H H C F F X 
+A A H F F F E X 
+B X B E E E E X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 07-24 ****
+E E E E D D X X 
+X A A E D F X X 
+C A A D D F F X 
+C A A B B B F X 
+C C C B G B F X 
+H H X G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-25 ****
+G G G G H H X X 
+X G D H H H X X 
+D D D F F E E X 
+D F F F B B E X 
+A A C C C B E X 
+A A C X B B E X 
+A A C X X X X X 
+X X X X X X X X 
+
+
+**** 07-26 ****
+B B D C C C X X 
+X B D D D C X X 
+B B H H D C G X 
+A A H H H G G X 
+A A E E E E G X 
+A A F F X E G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-27 ****
+G G G G D D X X 
+X G H H H D X X 
+C C C H H D D X 
+A A C E E E E X 
+A A C E B B B X 
+A A F F B X B X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 07-28 ****
+G G G G D E X X 
+X G D D D E X X 
+A A D B B E F X 
+A A C B E E F X 
+A A C B B F F X 
+H H C C C F X X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 07-29 ****
+H H H B B B X X 
+X H H B G B X X 
+F F F G G E E X 
+A A F F G C E X 
+A A D D G C E X 
+A A D C C C E X 
+X D D X X X X X 
+X X X X X X X X 
+
+
+**** 07-30 ****
+G G G G D D X X 
+X G C C C D X X 
+A A H H C D D X 
+A A H H C F F X 
+A A H F F F E X 
+B B B E E E E X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 07-31 ****
+H H H B B B X X 
+X H H B F B X X 
+D C C C F E E X 
+D D D C F F E X 
+A A D C G F E X 
+A A G G G G E X 
+A A X X X X X X 
+X X X X X X X X 
+
+
+**** 08-01 ****
+B B B C C C X X 
+B X B D D C X X 
+X H H H D C E X 
+A A H H D D E X 
+A A G G G G E X 
+A A F F G E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-02 ****
+C C C B B B X X 
+C X E B G B X X 
+C X E G G G G X 
+A A E D D H H X 
+A A E E D H H X 
+A A F F D D H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-03 ****
+B B E E E E X X 
+B X E D D F X X 
+B B X G D F F X 
+A A G G D D F X 
+A A C G H H F X 
+A A C G H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-04 ****
+E E E E H H X X 
+B X B E H H X X 
+B B B X F H G X 
+A A D D F G G X 
+A A C D F F G X 
+A A C D D F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-05 ****
+E E E E D D X X 
+E X C C C D X X 
+A A C F X D D X 
+A A C F B B B X 
+A A F F B G B X 
+H H F G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-06 ****
+B B B H H H X X 
+B X B E H H X X 
+E E E E F X G X 
+A A D D F G G X 
+A A C D F F G X 
+A A C D D F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-07 ****
+E E E E F F X X 
+E X F F F G X X 
+A A C C C G X X 
+A A C D D G G X 
+A A C D B G B X 
+H H D D B B B X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-08 ****
+B B B D D G X X 
+B X B D E G X X 
+F F D D E G G X 
+X F F F E G C X 
+A A H H E E C X 
+A A H H C C C X 
+A A H X X X X X 
+X X X X X X X X 
+
+
+**** 08-09 ****
+G D D B B B X X 
+G X D B F B X X 
+G G D D F F E X 
+G X C C C F E X 
+A A H H C F E X 
+A A H H C E E X 
+A A H X X X X X 
+X X X X X X X X 
+
+
+**** 08-10 ****
+B B C C C D X X 
+B X C D D D X X 
+B B C D H H E X 
+A A X H H H E X 
+A A G G G G E X 
+A A F F G E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-11 ****
+B B B F D D X X 
+B X B F F D X X 
+G G G G F D D X 
+A A G X F H H X 
+A A C E H H H X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-12 ****
+E E E E D D X X 
+B X B E D G X X 
+B B B D D G G X 
+A A H H X G C X 
+A A H H H G C X 
+A A F F C C C X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-13 ****
+E E E E D D X X 
+E X G B B D X X 
+A A G G B D D X 
+A A G B B X C X 
+A A G F F F C X 
+H H F F C C C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-14 ****
+E E E E F F X X 
+E X F F F G X X 
+A A C C C G G X 
+A A C D D G X X 
+A A C D B G B X 
+H H D D B B B X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-15 ****
+E E B B B F X X 
+E X B G B F X X 
+E G G G G F F X 
+E D D A A H F X 
+X D C A A H H X 
+D D C A A H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-16 ****
+E E E E A A X X 
+E X D D A A X X 
+C C C D A A G X 
+B B C D D G G X 
+B X C H H H G X 
+B B F F H H G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-17 ****
+E E E E D D X X 
+E X B B B D X X 
+A A B G B D D X 
+A A G G G G C X 
+A A X F F F C X 
+H H F F C C C X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-18 ****
+B B B H E E X X 
+B X B H H E X X 
+C C C H H E G X 
+A A C D D E G X 
+A A C X D G G X 
+A A F F D D G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-19 ****
+G G G G H F X X 
+D X G H H F X X 
+D D D H H F F X 
+A A D B B B F X 
+A A C B X B E X 
+A A C E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 08-20 ****
+B B C C C G X X 
+B X C H G G X X 
+B B C H H G E X 
+A A D H H G E X 
+A A D D D X E X 
+A A F F D E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-21 ****
+E E E E B B X X 
+E X C C C B X X 
+A A C F B B D X 
+A A C F D D D X 
+A A F F D G X X 
+H H F G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-22 ****
+B B B F D D X X 
+B X B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+X H H E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-23 ****
+E E E E H H X X 
+E X G H H H X X 
+A A G G F F F X 
+A A G F F D C X 
+A A G D D D C X 
+B X B D C C C X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 08-24 ****
+B B B F D D X X 
+B X B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+H H X E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-25 ****
+B B B C C C X X 
+B X B C D D X X 
+A A G C D F E X 
+A A G D D F E X 
+A A G G F F E X 
+H H G X F E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-26 ****
+B B D C C C X X 
+B X D D D C X X 
+B B H H D C G X 
+A A H H H G G X 
+A A E E E E G X 
+A A F F X E G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 08-27 ****
+B B B C C C X X 
+B X B D D C X X 
+A A E F D C G X 
+A A E F D D G X 
+A A E F F G G X 
+H H E E F X G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-28 ****
+B B B D D F X X 
+B X B D C F X X 
+A A D D C F F X 
+A A C C C G F X 
+A A E G G G G X 
+H H E E E E X X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-29 ****
+B B B F D D X X 
+B X B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+H H H E E E E X 
+X H H X X X X X 
+X X X X X X X X 
+
+
+**** 08-30 ****
+E E E E H H X X 
+E X G H H H X X 
+A A G G F F F X 
+A A G F F D C X 
+A A G D D D C X 
+B B B D C C C X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 08-31 ****
+B B B F D D X X 
+B X B F C D X X 
+A A F F C D D X 
+A A F G C C C X 
+A A G G G G E X 
+H H H E E E E X 
+H H X X X X X X 
+X X X X X X X X 
+
+
+**** 09-01 ****
+E E E E H H X X 
+E B X B H H X X 
+X B B B F H G X 
+A A D D F G G X 
+A A C D F F G X 
+A A C D D F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-02 ****
+G G G G H H X X 
+C G X H H H X X 
+C X B B F E E X 
+C C C B F F E X 
+A A B B D F E X 
+A A D D D F E X 
+A A D X X X X X 
+X X X X X X X X 
+
+
+**** 09-03 ****
+A A E E E E X X 
+A A X F F E X X 
+A A X H F F F X 
+D D H H B B B X 
+C D H H B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-04 ****
+A A E E E E X X 
+A A X F F E X X 
+A A H X F F F X 
+D D H H B B B X 
+C D H H B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-05 ****
+A A E E H H X X 
+A A X E H H X X 
+A A F E X H G X 
+D D F E B B G X 
+C D F F B G G X 
+C D D F B B G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-06 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F X H X 
+D D B B B H H X 
+C D B E B H H X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-07 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F H X X 
+D D B B B H H X 
+C D B E B H H X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-08 ****
+A A E E E E X X 
+A A X G D E X X 
+A A F G D D D X 
+X F F G G H D X 
+C F B G B H H X 
+C F B B B H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-09 ****
+A A E E E E X X 
+A A X F F E X X 
+A A H H F F F X 
+G X H H H D C X 
+G B B D D D C X 
+G G B D C C C X 
+G B B X X X X X 
+X X X X X X X X 
+
+
+**** 09-10 ****
+A A B B D D X X 
+A A X B F D X X 
+A A B B F D D X 
+E E X G F F C X 
+E G G G G F C X 
+E H H H C C C X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 09-11 ****
+A A E E E E X X 
+A A X F F E X X 
+A A B B F F F X 
+D D B X H H H X 
+C D B B G H H X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-12 ****
+A A E E E E X X 
+A A X F F E X X 
+A A H H F F F X 
+G H H H X D C X 
+G B B D D D C X 
+G G B D C C C X 
+G B B X X X X X 
+X X X X X X X X 
+
+
+**** 09-13 ****
+A A C C C F X X 
+A A X G C F X X 
+A A G G C F F X 
+B B B G D X F X 
+B H B G D D D X 
+H H E E E E D X 
+H H E X X X X X 
+X X X X X X X X 
+
+
+**** 09-14 ****
+A A B B D D X X 
+A A X B F D X X 
+A A B B F D D X 
+C C C G F F X X 
+C G G G G F E X 
+C H H E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 09-15 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F H E X 
+B B D D H H E X 
+X B C D H H E X 
+B B C D D E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-16 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F H E X 
+B B D D H H E X 
+B X C D H H E X 
+B B C D D E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-17 ****
+A A E E E E X X 
+A A X F F E X X 
+A A H H F F F X 
+D D H H B B B X 
+C D X H B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-18 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F E E X 
+B B B C C C E X 
+B H B X D C E X 
+H H D D D C E X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 09-19 ****
+A A G G G G X X 
+A A X B G B X X 
+A A F B B B E X 
+D D F E E E E X 
+C D F F X H H X 
+C D D F H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-20 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F H H X 
+D D B B B H H X 
+C D B E B X H X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-21 ****
+A A G G G G X X 
+A A X G F F X X 
+A A F F F H H X 
+D D B B B H H X 
+C D B E B H X X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-22 ****
+A A E E E E X X 
+A A X F F E X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+X H H G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 09-23 ****
+A A G G G G X X 
+A A X G D D X X 
+A A F F D H H X 
+F F F D D H H X 
+B B C C C H E X 
+B X C E E E E X 
+B B C X X X X X 
+X X X X X X X X 
+
+
+**** 09-24 ****
+A A G G G G X X 
+A A X G D D X X 
+A A F F D E E X 
+F F F D D H E X 
+C B B B H H E X 
+C B X B H H E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-25 ****
+A A E E E E X X 
+A A X F F E X X 
+A A B B F F F X 
+D D B G G G G X 
+C D B B G H H X 
+C D D X H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-26 ****
+A A G G G G X X 
+A A X G B B X X 
+A A F F B E E X 
+F F F D B B E X 
+C C C D D D E X 
+C H H H X D E X 
+C H H X X X X X 
+X X X X X X X X 
+
+
+**** 09-27 ****
+A A G G G G X X 
+A A X G H H X X 
+A A F E H H H X 
+D D F E E E E X 
+C D F F B B B X 
+C D D F B X B X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 09-28 ****
+A A C C C E X X 
+A A X G C E X X 
+A A G G C E F X 
+B B B G E E F X 
+B H B G D F F X 
+H H D D D F X X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 09-29 ****
+A A E E E E X X 
+A A X F F E X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+H H H G G G G X 
+X H H X X X X X 
+X X X X X X X X 
+
+
+**** 09-30 ****
+A A E E E E X X 
+A A X F F E X X 
+A A D C F F F X 
+D D D C H H H X 
+D C C C G H H X 
+B B B G G G G X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 10-01 ****
+H H E E E E X X 
+H H E X D F X X 
+X H D D D F F X 
+A A D B B B F X 
+A A C B G B F X 
+A A C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-02 ****
+H H E E E E X X 
+H H E X D F X X 
+H X D D D F F X 
+A A D B B B F X 
+A A C B G B F X 
+A A C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-03 ****
+A A B B B G X X 
+A A B X B G X X 
+A A X E E G G X 
+C C C D E G H X 
+C D D D E H H X 
+C D F F E H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 10-04 ****
+A A E E D D X X 
+A A E X C D X X 
+A A E X C D D X 
+B B E G C C C X 
+B G G G G H H X 
+B B F F H H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 10-05 ****
+B B B H H H X X 
+B G B X H H X X 
+G G G G X E E X 
+A A D C C C E X 
+A A D D D C E X 
+A A F F D C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 10-06 ****
+A A E E E E X X 
+A A E X F F X X 
+A A F F F X G X 
+D C C C B B G X 
+D D D C B G G X 
+H H D C B B G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 10-07 ****
+A A G G G G X X 
+A A D X G E X X 
+A A D D D E X X 
+B B B F D E C X 
+B H B F E E C X 
+H H F F C C C X 
+H H F X X X X X 
+X X X X X X X X 
+
+
+**** 10-08 ****
+A A B B B F X X 
+A A B X B F X X 
+A A D D F F G X 
+X H H D F G G X 
+C H H D D E G X 
+C H E E E E G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-09 ****
+A A B B B G X X 
+A A B X B G X X 
+A A F D D G G X 
+E X F F D G C X 
+E H H F D D C X 
+E H H F C C C X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 10-10 ****
+A A B B B G X X 
+A A B X B G X X 
+A A C C C G G X 
+E E X D C G H X 
+E D D D C H H X 
+E D F F F H H X 
+E F F X X X X X 
+X X X X X X X X 
+
+
+**** 10-11 ****
+A A B B B G X X 
+A A B X B G X X 
+A A F E E G G X 
+D D F X E G H X 
+C D F F E H H X 
+C D D F E H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-12 ****
+A A B B B G X X 
+A A B X B G X X 
+A A D C G G E X 
+D D D C X G E X 
+D F F C C C E X 
+H H F F F E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 10-13 ****
+A A B B B F X X 
+A A B X B F X X 
+A A H H H F F X 
+D D H H G X F X 
+C D G G G G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-14 ****
+A A C C C G X X 
+A A F X C G X X 
+A A F F C G G X 
+B B B F D G X X 
+B H B F D D D X 
+H H E E E E D X 
+H H E X X X X X 
+X X X X X X X X 
+
+
+**** 10-15 ****
+A A B B B C X X 
+A A B X B C X X 
+A A D C C C G X 
+F F D D D G G X 
+X F F F D E G X 
+H H E E E E G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 10-16 ****
+A A B B B F X X 
+A A B X B F X X 
+A A D C F F G X 
+D D D C F G G X 
+D X E C C C G X 
+H H E E E E G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 10-17 ****
+A A B B B G X X 
+A A B X B G X X 
+A A C C C G G X 
+E F D D C G H X 
+E F X D C H H X 
+E F F D D H H X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 10-18 ****
+A A E E E E X X 
+A A E X F F X X 
+A A F F F H H X 
+D D B B B H H X 
+C D B X B G H X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-19 ****
+A A B B B E X X 
+A A B X B E X X 
+A A H H H E G X 
+D D H H E E G X 
+C D F F X G G X 
+C D D F F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-20 ****
+A A B B B C X X 
+A A B X B C X X 
+A A F C C C G X 
+E E F D D G G X 
+E H F F D X G X 
+E H H F D D G X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 10-21 ****
+A A B B B C X X 
+A A B X B C X X 
+A A H C C C D X 
+E F H H D D D X 
+E F H H D G X X 
+E F F G G G G X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 10-22 ****
+A A E E E E X X 
+A A E X D F X X 
+A A D D D F F X 
+H H D B B B F X 
+H H C B G B F X 
+X H C G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-23 ****
+A A B B B G X X 
+A A B X B G X X 
+A A C C C G G X 
+E F D D C G H X 
+E F F D C H H X 
+E X F D D H H X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 10-24 ****
+A A E E E E X X 
+A A E X H H X X 
+A A F F H H G X 
+F F F D D H G X 
+C B B B D G G X 
+C B X B D D G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-25 ****
+A A B B B E X X 
+A A B X B E X X 
+A A H H H E G X 
+D D H H E E G X 
+C D F F F G G X 
+C D D X F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 10-26 ****
+A A C C C G X X 
+A A C X G G X X 
+A A C D D G E X 
+B B B F D G E X 
+B H B F D D E X 
+H H F F X E E X 
+H H F X X X X X 
+X X X X X X X X 
+
+
+**** 10-27 ****
+A A C C C E X X 
+A A F X C E X X 
+A A F F C E G X 
+B B B F E E G X 
+B H B F D G G X 
+H H D D D X G X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 10-28 ****
+A A B B B F X X 
+A A B X B F X X 
+A A H H H F F X 
+C C C H H G F X 
+C D D G G G G X 
+C D E E E E X X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 10-29 ****
+A A C C C G X X 
+A A C X G G X X 
+A A C D D G E X 
+B B H H D G E X 
+B H H H D D E X 
+B B F F F E E X 
+X F F X X X X X 
+X X X X X X X X 
+
+
+**** 10-30 ****
+A A E E E E X X 
+A A E X D F X X 
+A A D D D F G X 
+H H D C F F G X 
+H H H C F G G X 
+B B B C C C G X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 10-31 ****
+A A B B B F X X 
+A A B X B F X X 
+A A G E E F F X 
+G G G G E H F X 
+C C C D E H H X 
+C D D D E H H X 
+C D X X X X X X 
+X X X X X X X X 
+
+
+**** 11-01 ****
+E E E E D D X X 
+E B B B X D X X 
+X B C B G D D X 
+A A C G G G G X 
+A A C C C H H X 
+A A F F H H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 11-02 ****
+C C C B B B X X 
+C D D B X B X X 
+C X D H H H E X 
+A A D D H H E X 
+A A G G G G E X 
+A A F F G E E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 11-03 ****
+A A H H D D X X 
+A A H H X D X X 
+A A X H G D D X 
+E E G G G G C X 
+E B B F F F C X 
+E B F F C C C X 
+E B B X X X X X 
+X X X X X X X X 
+
+
+**** 11-04 ****
+A A E B B B X X 
+A A E B X B X X 
+A A E X H H G X 
+D D E E H H G X 
+C D F F H G G X 
+C D D F F F G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 11-05 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G X E E X 
+F F G C C C E X 
+H F F F D C E X 
+H H D D D C E X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 11-06 ****
+A A E E E E X X 
+A A H H X E X X 
+A A H H H X G X 
+C C C D B B G X 
+C D D D B G G X 
+C D F F B B G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 11-07 ****
+A A G G G G X X 
+A A D G X E X X 
+A A D D D E X X 
+B B B F D E C X 
+B H B F E E C X 
+H H F F C C C X 
+H H F X X X X X 
+X X X X X X X X 
+
+
+**** 11-08 ****
+A A F B B B X X 
+A A F B X B X X 
+A A F F D D G X 
+X H H F D G G X 
+C H H D D E G X 
+C H E E E E G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 11-09 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G F F F X 
+E X G F F D C X 
+E H H D D D C X 
+E H H D C C C X 
+E E H X X X X X 
+X X X X X X X X 
+
+
+**** 11-10 ****
+A A F B B B X X 
+A A F B X B X X 
+A A F F H H H X 
+D D X F G H H X 
+C D G G G G E X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 11-11 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G C C C X 
+E F G X D D C X 
+E F H H H D C X 
+E F F H H D D X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 11-12 ****
+C C C G D D X X 
+A A C G X D X X 
+A A C G G D D X 
+A A E G X B B X 
+H H E E E E B X 
+H H F F F B B X 
+H F F X X X X X 
+X X X X X X X X 
+
+
+**** 11-13 ****
+A A C C C F X X 
+A A C G X F X X 
+A A C G G F F X 
+B B B G D X F X 
+B H B G D D D X 
+H H E E E E D X 
+H H E X X X X X 
+X X X X X X X X 
+
+
+**** 11-14 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G F F F X 
+E E G F F H X X 
+E C C C D H H X 
+E C D D D H H X 
+E C D X X X X X 
+X X X X X X X X 
+
+
+**** 11-15 ****
+A A E E E E X X 
+A A C F X E X X 
+A A C F F H H X 
+C C C D F H H X 
+X D D D F G H X 
+B D B G G G G X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 11-16 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G F F F X 
+E E G F F D C X 
+E X H D D D C X 
+E H H D C C C X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-17 ****
+A A E B B B X X 
+A A E B X B X X 
+A A E F C C C X 
+G E E F D D C X 
+G G X F F D C X 
+G H H H F D D X 
+G H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-18 ****
+A A F B B B X X 
+A A F B X B X X 
+A A F F H H G X 
+C C C F H H G X 
+C D D X H G G X 
+C D E E E E G X 
+D D E X X X X X 
+X X X X X X X X 
+
+
+**** 11-19 ****
+A A F B B B X X 
+A A F B X B X X 
+A A F F C C C X 
+E H H F D D C X 
+E H H H X D C X 
+E G G G G D D X 
+E E G X X X X X 
+X X X X X X X X 
+
+
+**** 11-20 ****
+A A F C C C X X 
+A A F F X C X X 
+A A D F B C B X 
+D D D F B B B X 
+D G G G G X E X 
+H H G E E E E X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-21 ****
+A A E E D D X X 
+A A C E X D X X 
+A A C E G D D X 
+C C C E G B B X 
+F F F G G B X X 
+H H F F G B B X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-22 ****
+A A E E E E X X 
+A A F F X E X X 
+A A D F F F G X 
+H H D D D G G X 
+H H C B D B G X 
+X H C B B B G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 11-23 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G C C C X 
+E F G H D D C X 
+E F F H H D C X 
+E X F H H D D X 
+E E F X X X X X 
+X X X X X X X X 
+
+
+**** 11-24 ****
+A A E E E E X X 
+A A F F X E X X 
+A A G F F F D X 
+G G G G D D D X 
+C B B B D H H X 
+C B X B H H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 11-25 ****
+A A E B B B X X 
+A A E B X B X X 
+A A E F C C C X 
+G E E F D D C X 
+G G H F F D C X 
+G H H X F D D X 
+G H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-26 ****
+A A F B B B X X 
+A A F B X B X X 
+A A F F C C C X 
+E E G F D D C X 
+E G G G G D C X 
+E H H H X D D X 
+E H H X X X X X 
+X X X X X X X X 
+
+
+**** 11-27 ****
+A A G B B B X X 
+A A G B X B X X 
+A A G G F F F X 
+E E G F F H H X 
+E C C C D H H X 
+E C D D D X H X 
+E C D X X X X X 
+X X X X X X X X 
+
+
+**** 11-28 ****
+A A C C C E X X 
+A A C G X E X X 
+A A C G G E F X 
+B B B G E E F X 
+B H B G D F F X 
+H H D D D F X X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 11-29 ****
+A A E E E E X X 
+A A H H X E X X 
+A A H H C C C X 
+B B G H D D C X 
+B G G G G D C X 
+B B F F F D D X 
+X F F X X X X X 
+X X X X X X X X 
+
+
+**** 11-30 ****
+A A C B B B X X 
+A A C B X B X X 
+A A C C C H E X 
+G F D D H H E X 
+G F F D H H E X 
+G G F D D E E X 
+G X F X X X X X 
+X X X X X X X X 
+
+
+**** 12-01 ****
+E E E E B B X X 
+E C C C B X X X 
+X D D C B B G X 
+A A D C H G G X 
+A A D D H H G X 
+A A F F H H G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-02 ****
+H H G G G G X X 
+H H B G B X X X 
+H X B B B E E X 
+A A D C C C E X 
+A A D D D C E X 
+A A F F D C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-03 ****
+A A G G G G X X 
+A A F F G X X X 
+A A X F F F H X 
+D D B B B H H X 
+C D B E B H H X 
+C D D E E E E X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-04 ****
+A A E E E E X X 
+A A E F F X X X 
+A A H X F F F X 
+D D H H B B B X 
+C D H H B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-05 ****
+B B B H H H X X 
+B G B H H X X X 
+G G G G X E E X 
+A A D C C C E X 
+A A D D D C E X 
+A A F F D C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-06 ****
+A A E E E E X X 
+A A E H H X X X 
+A A H H H X G X 
+C C C D B B G X 
+C D D D B G G X 
+C D F F B B G X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-07 ****
+A A G G G G X X 
+A A C D G X X X 
+A A C D D D X X 
+B B C C C D H X 
+B E E E E H H X 
+B B F F E H H X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-08 ****
+A A H H D D X X 
+A A H H D X X X 
+A A H D D E E X 
+X F F C C C E X 
+B B F F F C E X 
+B G G G G C E X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 12-09 ****
+A A G G G G X X 
+A A B G B X X X 
+A A B B B E E X 
+H X D C C C E X 
+H H D D D C E X 
+H H F F D C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-10 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H C C C X 
+B B X H D D C X 
+B E E E E D C X 
+B B F F E D D X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-11 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H C C C X 
+B B H X D D C X 
+B E E E E D C X 
+B B F F E D D X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-12 ****
+A A G G G G X X 
+A A B B G X X X 
+A A B C C C E X 
+F F B B X C E X 
+H F F F D C E X 
+H H D D D E E X 
+H H D X X X X X 
+X X X X X X X X 
+
+
+**** 12-13 ****
+A A G G G G X X 
+A A B G B X X X 
+A A B B B E E X 
+C C C D H X E X 
+C D D D H H E X 
+C D F F H H E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-14 ****
+A A E C C C X X 
+A A E C F X X X 
+A A E C F B B X 
+D E E F F B X X 
+D D D F G B B X 
+H H D G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 12-15 ****
+A A G G G G X X 
+A A C F G X X X 
+A A C F F H H X 
+C C C D F H H X 
+X D D D F H E X 
+B D B E E E E X 
+B B B X X X X X 
+X X X X X X X X 
+
+
+**** 12-16 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H H E E X 
+B B D C C C E X 
+B X D D D C E X 
+B B F F D C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-17 ****
+A A E E E E X X 
+A A E F F X X X 
+A A H H F F F X 
+D D H H B B B X 
+C D X H B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-18 ****
+A A E E E E X X 
+A A E F F X X X 
+A A H H F F F X 
+D D H H B B B X 
+C D H X B G B X 
+C D D G G G G X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-19 ****
+A A H H D D X X 
+A A H H D X X X 
+A A H D D E E X 
+F F F C C C E X 
+B B F F X C E X 
+B G G G G C E X 
+B B G X X X X X 
+X X X X X X X X 
+
+
+**** 12-20 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H H E E X 
+C C C D B B E X 
+C D D D B X E X 
+C D F F B B E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-21 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H F F F X 
+E E H F F B B X 
+E C C C D B X X 
+E C D D D B B X 
+E C D X X X X X 
+X X X X X X X X 
+
+
+**** 12-22 ****
+A A E E E E X X 
+A A E F F X X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+X H H G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 12-23 ****
+A A G G G G X X 
+A A H H G X X X 
+A A H H H E E X 
+F F F C C C E X 
+B B F F D C E X 
+B X D D D C E X 
+B B D X X X X X 
+X X X X X X X X 
+
+
+**** 12-24 ****
+A A E E E E X X 
+A A E F F X X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+H H X G G G G X 
+H H H X X X X X 
+X X X X X X X X 
+
+
+**** 12-25 ****
+A A G G G G X X 
+A A E E G X X X 
+A A E F B B B X 
+D D E F B H B X 
+C D E F F H H X 
+C D D X F H H X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-26 ****
+A A H H D D X X 
+A A H H D X X X 
+A A H D D E E X 
+B B G C C C E X 
+B G G G G C E X 
+B B F F X C E X 
+F F F X X X X X 
+X X X X X X X X 
+
+
+**** 12-27 ****
+A A E C C C X X 
+A A E C D X X X 
+A A E C D D D X 
+G E E F F F D X 
+G G F F B B B X 
+G H H H B X B X 
+G H H X X X X X 
+X X X X X X X X 
+
+
+**** 12-28 ****
+A A G G G G X X 
+A A E E G X X X 
+A A E B B B F X 
+D D E B H B F X 
+C D E H H F F X 
+C D D H H F X X 
+C C C X X X X X 
+X X X X X X X X 
+
+
+**** 12-29 ****
+A A E E E E X X 
+A A E F F X X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+H H H G G G G X 
+X H H X X X X X 
+X X X X X X X X 
+
+
+**** 12-30 ****
+A A G G G G X X 
+A A C G D X X X 
+A A C F D D D X 
+C C C F F H D X 
+E E E E F H H X 
+B B B E F H H X 
+B X B X X X X X 
+X X X X X X X X 
+
+
+**** 12-31 ****
+A A E E E E X X 
+A A E F F X X X 
+A A D C F F F X 
+D D D C B B B X 
+D C C C B G B X 
+H H H G G G G X 
+H H X X X X X X 
+X X X X X X X X 
+

@@ -1,6 +1,3 @@
-// use crate::file::File;
-// use crate::rank::Rank;
-// use crate::square::*;
 use std::fmt;
 use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, Mul, Not};
 use chrono::{NaiveDate as Date, Datelike};
@@ -22,7 +19,6 @@ use chrono::{NaiveDate as Date, Datelike};
 /// using the implemented operators to work with this object.
 ///
 ///
-
 #[derive(PartialEq, PartialOrd, Clone, Copy, Debug, Default)]
 pub struct BitBoard(pub u64);
 
@@ -270,13 +266,7 @@ impl BitBoard {
         BitBoard(b)
     }
 
-    /// Construct a new `BitBoard` with a particular `Square` set
-    // #[inline]
-    // pub fn set(rank: Rank, file: File) -> BitBoard {
-    //     BitBoard::from_square(Square::make_square(rank, file))
-    // }
-
-    // Generates a bitboard with only the month and day cleared
+    /// Generates a bitboard with only the month and day cleared
     pub fn from_date(d: Date) -> BitBoard {
       let month_part = match d.month() {
         m @ 1..=6 => 1 << (16-m),
@@ -294,24 +284,6 @@ impl BitBoard {
 
       BitBoard(!((month_part << 48) | day_part))
     }
-
-    // Construct a new `BitBoard` with a particular `Square` set
-    // #[inline]
-    // pub fn from_square(sq: Square) -> BitBoard {
-    //     BitBoard(1u64 << sq.to_int())
-    // }
-
-    // Convert an `Option<Square>` to an `Option<BitBoard>`
-    // #[inline]
-    // pub fn from_maybe_square(sq: Option<Square>) -> Option<BitBoard> {
-    //     sq.map(|s| BitBoard::from_square(s))
-    // }
-
-    // Convert a `BitBoard` to a `Square`.  This grabs the least-significant `Square`
-    // #[inline]
-    // pub fn to_square(&self) -> Square {
-    //     unsafe { Square::new(self.0.trailing_zeros() as u8) }
-    // }
 
     /// Count the number of `Squares` set in this `BitBoard`
     #[inline]
@@ -331,19 +303,3 @@ impl BitBoard {
         (self.0 >> rightshift) as usize
     }
 }
-
-// For the `BitBoard`, iterate over every `Square` set.
-// impl Iterator for BitBoard {
-//     type Item = Square;
-
-//     #[inline]
-//     fn next(&mut self) -> Option<Square> {
-//         if self.0 == 0 {
-//             None
-//         } else {
-//             let result = self.to_square();
-//             *self ^= BitBoard::from_square(result);
-//             Some(result)
-//         }
-//     }
-// }

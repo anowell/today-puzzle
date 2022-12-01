@@ -1,6 +1,6 @@
 use anyhow::Result;
 use bitboard::BitBoard;
-use chrono::{Datelike, Days, NaiveDate as Date, Local};
+use chrono::{Datelike, Days, Local, NaiveDate as Date};
 use clap::Parser;
 use piece::{PieceRef, PIECES};
 use std::fmt;
@@ -34,19 +34,16 @@ impl Board {
     }
 
     pub fn append_valid_placements(&self, piece: PieceRef, buf: &mut Vec<Board>) {
-        // println!("COMBINED\n{}", self.combined);
-
-        // FIXME: 0..6 can wrap around; really should know width/height of a given variation
         for variation in piece.variations {
             let w = variation.width();
             let h = variation.height();
-            // println!("w x h = {} x {}", w, h);
             for x in 0..(9 - w) {
                 for y in 0..(9 - h) {
                     let piece_bb = variation.to_bitboard(x, y);
 
+                    // Check if piece_bb can be placed on the board without overlap
                     if piece_bb & self.combined == BitBoard(0) {
-                        // println!("PIECE_BB\n{}", piece_bb);
+                        // Create a new board that adds the piece
                         let mut new_board = *self;
                         new_board.pieces[self.piece_count] = piece_bb;
                         new_board.piece_count += 1;
@@ -103,10 +100,14 @@ struct Args {
 
 #[derive(clap::ValueEnum, Clone, Copy, Debug)]
 enum Print {
-    First,   // no count - faster
-    Summary, // first plus count
-    All,     // with counts
-    Count,   // only count
+    /// Display first solution, but no count (fastest)
+    First,
+    /// Display first solution and count of solutions
+    Summary,
+    /// Display all solutions and count of solutions
+    All,
+    /// Display only the count of solutions
+    Count,
 }
 
 fn main() -> Result<()> {
@@ -115,35 +116,12 @@ fn main() -> Result<()> {
     if args.all_dates {
         let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
         while d.year() < 2021 {
-            match args.print {
-                Print::Count => {}
-                _ => println!("\n**** {:02}-{:02} ****", d.month(), d.day()),
-            }
-            let solutions = solve(d.month(), d.day(), args.print);
-            match args.print {
-                Print::First => {}
-                _ => println!(
-                    "{:02}-{:02} has {} solutions",
-                    d.month(),
-                    d.day(),
-                    solutions
-                ),
-            }
+            solve(d.month(), d.day(), args.print);
             d = d.checked_add_days(Days::new(1)).unwrap();
         }
     } else {
-        let d = args.date.unwrap_or_else(|| Local::now().date_naive() );
-        match args.print {
-            Print::Count => {}
-            _ => println!("**** {:02}-{:02} ****", d.month(), d.day()),
-        }
-        let solutions = solve(d.month(), d.day(), args.print);
-        println!(
-            "{:02}-{:02} has {} solutions",
-            d.month(),
-            d.day(),
-            solutions
-        );
+        let d = args.date.unwrap_or_else(|| Local::now().date_naive());
+        solve(d.month(), d.day(), args.print);
     }
 
     Ok(())
@@ -151,7 +129,12 @@ fn main() -> Result<()> {
 
 fn solve(month: u32, day: u32, print: Print) -> u32 {
     let mut dfs = vec![Board::from_month_day(month, day)];
-    let mut solutions = 0; // = Vec::new();
+    let mut solutions = 0;
+
+    match print {
+        Print::Count => {}
+        _ => println!("**** {:02}-{:02} ****", month, day),
+    }
 
     while !dfs.is_empty() {
         let board = dfs.pop().unwrap();
@@ -169,6 +152,11 @@ fn solve(month: u32, day: u32, print: Print) -> u32 {
         } else {
             board.append_valid_placements(PIECES[board.piece_count], &mut dfs);
         }
+    }
+
+    match print {
+        Print::First => {}
+        _ => println!("{:02}-{:02} has {} solutions", month, day, solutions),
     }
     solutions
 }

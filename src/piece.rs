@@ -1,5 +1,6 @@
 use crate::bitboard::BitBoard;
 
+// Pieces with there rotations and reflections created at compile time
 pub const PIECE_RECT: Piece<2> = Piece::<2>::rotations(0x0077);
 pub const PIECE_U: Piece<4> = Piece::<4>::rotations(0x0313);
 pub const PIECE_CORNER: Piece<4> = Piece::<4>::rotations(0x0117);
@@ -23,7 +24,7 @@ pub const PIECES: [PieceRef; 8] = [
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Piece<const N: usize> {
     pub(crate) variations: [BitPiece; N],
-} // TODO incorporate a width and height so we know how much translation we can do
+}
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct PieceRef<'a> {
@@ -81,7 +82,37 @@ impl Piece<8> {
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct BitPiece(pub u16);
 impl BitPiece {
+    /// Assumes shape is aligned to LSB
+    pub const fn width(&self) -> usize {
+        if self.0 & 0xEEEE == 0 {
+            1
+        } else if self.0 & 0xCCCC == 0 {
+            2
+        } else if self.0 & 0x8888 == 0 {
+            3
+        } else {
+            4
+        }
+    }
+
+    /// Assumes shapes is aligned to LSB
+    pub const fn height(&self) -> usize {
+        if self.0 & 0xFFF0 == 0 {
+            1
+        } else if self.0 & 0xFF00 == 0 {
+            2
+        } else if self.0 & 0xF000 == 0 {
+            3
+        } else {
+            4
+        }
+
+    }
+
     /// Horizontal flip
+    ///
+    /// x' = 3 - x
+    /// y' = y
     pub const fn flip(&self) -> BitPiece {
         let mut bp = BitPiece(0);
         let mut i = 0;
@@ -98,32 +129,10 @@ impl BitPiece {
         }
         bp.align()
     }
-
-    // assumes aligned
-    pub const fn width(&self) -> usize {
-        if self.0 & 0xCCCC == 0 {
-            2
-        } else if self.0 & 0x8888 == 0 {
-            3
-        } else {
-            4
-        }
-    }
-
-    // assumes aligned
-    pub const fn height(&self) -> usize {
-        if self.0 & 0xFF00 == 0 {
-            2
-        } else if self.0 & 0xF000 == 0 {
-            3
-        } else {
-            4
-        }
-
-    }
-    // Rotate 90^ clockwise
-    // y' = x
-    // x' = 3-y
+    /// Rotate 90 deg clockwise
+    ///
+    /// y' = x
+    /// x' = 3-y
     pub const fn rotate(&self) -> BitPiece {
         let mut bp = BitPiece(0);
         let mut i = 0;
@@ -141,14 +150,35 @@ impl BitPiece {
         bp.align()
     }
 
+    /// Aligns the shape to the LSB (effectively moving it to the bottom-right of the bitmap)
+    ///
+    /// ```
+    /// 1 1 1 0
+    /// 1 1 0 0
+    /// 0 0 0 0
+    /// 0 0 0 0
+    /// ```
+    ///
+    /// becomes:
+    ///
+    /// ```
+    /// 0 0 0 0
+    /// 0 0 0 0
+    /// 0 1 1 1
+    /// 0 1 1 0
+    /// ```
     const fn align(&self) -> BitPiece {
         let mut bp = BitPiece(self.0);
-        if bp.0 & 0x3333 == 0 {
+        if bp.0 & 0x7777 == 0 {
+            bp.0 >>= 3;
+        } else if bp.0 & 0x3333 == 0 {
             bp.0 >>= 2;
         } else if bp.0 & 0x1111 == 0 {
             bp.0 >>= 1;
         }
-        if bp.0 & 0x00FF == 0 {
+        if bp.0 & 0x0FFF == 0 {
+            bp.0 >>= 12;
+        } else if bp.0 & 0x00FF == 0 {
             bp.0 >>= 8;
         } else if bp.0 & 0x000F == 0 {
             bp.0 >>= 4;
@@ -156,6 +186,7 @@ impl BitPiece {
         bp
     }
 
+    /// Creates an 8x8 bitboard with the piece at a specific coordinate
     pub fn to_bitboard(&self, x: usize, y: usize) -> BitBoard {
         let mut bp = BitBoard(0);
         for i in 0..4 {

@@ -1,6 +1,6 @@
 use anyhow::Result;
 use bitboard::BitBoard;
-use chrono::{Datelike, Days, NaiveDate as Date};
+use chrono::{Datelike, Days, NaiveDate as Date, Local};
 use clap::Parser;
 use piece::{PieceRef, PIECES};
 use std::fmt;
@@ -88,7 +88,7 @@ impl fmt::Display for Board {
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// Date to solve for (year will be ignored)
+    /// Date to solve in YYYY-MM-DD format (year is ignored) [default: today]
     #[arg(short, long)]
     date: Option<Date>,
 
@@ -112,16 +112,6 @@ enum Print {
 fn main() -> Result<()> {
     let args = Args::parse();
 
-    if let Some(d) = args.date {
-        let solutions = solve(d.month(), d.day(), args.print);
-        println!(
-            "{:02}-{:02} has {} solutions",
-            d.month(),
-            d.day(),
-            solutions
-        );
-    }
-
     if args.all_dates {
         let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
         while d.year() < 2021 {
@@ -141,6 +131,19 @@ fn main() -> Result<()> {
             }
             d = d.checked_add_days(Days::new(1)).unwrap();
         }
+    } else {
+        let d = args.date.unwrap_or_else(|| Local::now().date_naive() );
+        match args.print {
+            Print::Count => {}
+            _ => println!("**** {:02}-{:02} ****", d.month(), d.day()),
+        }
+        let solutions = solve(d.month(), d.day(), args.print);
+        println!(
+            "{:02}-{:02} has {} solutions",
+            d.month(),
+            d.day(),
+            solutions
+        );
     }
 
     Ok(())

@@ -43,8 +43,8 @@ If you're just looking for solutions:
 - Oct 6 has the fewest unique solutions: 7
 - Jan 20 has the most unique solutions: 195
 - On my laptop (Dell XPS 13 Plus)
-  - it takes about 1-2 seconds to find all the solutions for a given date
-  - it takes about 11 seconds to find one solution for every day of the year
+  - it takes about 1 second to find all the solutions for a given date
+  - it takes about 10 seconds to find one solution for every day of the year
 
 ### Build/Run
 
@@ -59,15 +59,15 @@ $ target/release/today-puzzle --help
 Usage: today-puzzle [OPTIONS]
 
 Options:
-  -d, --date <DATE>    Date to solve for (year will be ignored)
+  -d, --date <DATE>    Date to solve in YYYY-MM-DD format (year is ignored) [default: today]
   -a, --all-dates      Count solutions for every day of the year
   -p, --print <PRINT>  Specifies with solutions to print [default: first] [possible values: first, summary, all, count]
   -h, --help           Print help information
-  -V, --version        Print version information
 
-# Run to solve a specific date --print one
+
+# Run to solve a specific date
 $ target/release/today-puzzle --date 2022-12-25
-
+**** 12-25 ****
 A A G G G G X X
 A A E E G X X X
 A A E F B B B X
@@ -77,10 +77,8 @@ C D D X F H H X
 C C C X X X X X
 X X X X X X X X
 
-12-25 has 92 solutions
-
 # Run for all days, but only print the solution count
-$ target/release/today-puzzle --all-dates --print none
+$ target/release/today-puzzle --all-dates --print count
 01-01 has 64 solutions
 01-02 has 109 solutions
 01-03 has 47 solutions

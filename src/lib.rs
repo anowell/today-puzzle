@@ -1,13 +1,20 @@
-use anyhow::Result;
 use bitboard::BitBoard;
-use chrono::{Datelike, Days, Local, NaiveDate as Date};
-use clap::Parser;
+use chrono::NaiveDate as Date;
 use piece::{PieceRef, PIECES};
-use std::{fmt, str::FromStr};
+use std::fmt;
 
-mod bitboard;
-mod piece;
+#[cfg(feature = "wasm")]
+use wasm_bindgen::prelude::*;
 
+// Lightweight allocator for smaller wasm size
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
+pub mod bitboard;
+pub mod piece;
+
+#[cfg_attr(feature = "wasm", wasm_bindgen)]
 #[derive(Copy, Clone, PartialEq, Debug)]
 pub struct Board {
     combined: BitBoard,
@@ -82,108 +89,35 @@ impl fmt::Display for Board {
     }
 }
 
-#[derive(Parser, Debug)]
-#[command(author, version, about, long_about = None)]
-struct Args {
-    /// Date to solve in M-D format [default: today]
-    #[arg(short, long)]
-    date: Option<MonthDay>,
 
-    /// Count solutions for every day of the year
-    #[arg(short, long)]
-    all_dates: bool,
-
-    /// Specifies with solutions to print
-    #[arg(short, long, value_enum, default_value_t=Print::First)]
-    print: Print,
-}
-
-#[derive(clap::ValueEnum, Clone, Copy, Debug)]
-enum Print {
-    /// Display first solution, but no count (fastest)
-    First,
-    /// Display first solution and count of solutions
-    Summary,
-    /// Display all solutions and count of solutions
-    All,
-    /// Display only the count of solutions
-    Count,
-}
-
-#[derive(Clone, Copy, Debug)]
-struct MonthDay(u32, u32);
-
-impl MonthDay {
-    fn today() -> MonthDay {
-        let d = Local::now().date_naive();
-        MonthDay(d.month(), d.day())
-    }
-}
-
-impl From<Date> for MonthDay {
-    fn from(d: Date) -> MonthDay {
-        MonthDay(d.month(), d.day())
-    }
-}
-
-impl FromStr for MonthDay {
-    type Err = chrono::ParseError;
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        // Prepend 2020 since it's a leap year
-        let s2020 = format!("2020-{}", s);
-        let d = Date::parse_from_str(&s2020, "%Y-%m-%d")?;
-        Ok(MonthDay(d.month(), d.day()))
-    }
-}
-
-
-fn main() -> Result<()> {
-    let args = Args::parse();
-
-    if args.all_dates {
-        let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
-        while d.year() < 2021 {
-            solve(d.into(), args.print);
-            d = d.checked_add_days(Days::new(1)).unwrap();
-        }
-    } else {
-        let d = args.date.unwrap_or_else(MonthDay::today);
-        solve(d, args.print);
-    }
-
-    Ok(())
-}
-
-fn solve(MonthDay(month, day): MonthDay, print: Print) -> u32 {
+pub fn solve(month: u32, day: u32, only_first: bool) -> Vec<Board> {
     let mut dfs = vec![Board::from_month_day(month, day)];
-    let mut solutions = 0;
-
-    match print {
-        Print::Count => {}
-        _ => println!("**** {:02}-{:02} ****", month, day),
-    }
+    let mut solutions = Vec::new();
 
     while !dfs.is_empty() {
         let board = dfs.pop().unwrap();
         if board.piece_count == PIECES.len() {
-            match print {
-                Print::First => {
-                    println!("{}\n", board);
-                    return 1;
-                }
-                Print::Summary if solutions == 0 => println!("{}\n", board),
-                Print::All => println!("{}\n", board),
-                _ => {}
+            solutions.push(board);
+            if only_first {
+                break;
             }
-            solutions += 1;
         } else {
             board.append_valid_placements(PIECES[board.piece_count], &mut dfs);
         }
     }
 
-    match print {
-        Print::First => {}
-        _ => println!("{:02}-{:02} has {} solutions", month, day, solutions),
-    }
     solutions
+}
+
+#[cfg(feature = "wasm")]
+#[wasm_bindgen]
+pub fn solve_date(month: u32, day: u32) -> Board {
+    let solutions = solve(month, day, true);
+    solutions[0]
+}
+
+#[cfg(feature = "wasm")]
+#[wasm_bindgen]
+pub fn get_piece(board: &Board, n: usize) -> u64 {
+    board.pieces[n].0
 }

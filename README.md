@@ -4,7 +4,7 @@ I was intrigued by this puzzle at a local math event.
 
 ![Today-is math puzzle](today-puzzle.jpg)
 
-So I decided to write a solution for it.
+So I decided to write a solution for it, and [blog about it](https://anowell.com/posts/calendar-puzzle.html).
 
 Converted to an 8x8 grid, the board is layed out like this
 (where XX is a square outside the board):
@@ -52,11 +52,11 @@ today-puzzle is written in [Rust](https://rustup.rs/)
 
 ```
 # Build in release mode (much much faster than debug mode)
-$ cargo build --release
+$ cargo build --release --examples
 
 # Print help
-$ target/release/today-puzzle --help
-Usage: today-puzzle [OPTIONS]
+$ target/release/examples/today-is --help
+Usage: today-is [OPTIONS]
 
 Options:
   -d, --date <DATE>    Date to solve in MM-DD format [default: today]
@@ -66,7 +66,7 @@ Options:
 
 
 # Run to solve a specific date
-$ target/release/today-puzzle --date 12-25
+$ target/release/examples/today-is --date 12-25
 **** 12-25 ****
 A A G G G G X X
 A A E E G X X X
@@ -78,10 +78,23 @@ C C C X X X X X
 X X X X X X X X
 
 # Run for all days, but only print the solution count
-$ target/release/today-puzzle --all-dates --print count
+$ target/release/examples/today-is --all-dates --print count
 01-01 has 64 solutions
 01-02 has 109 solutions
 01-03 has 47 solutions
 01-04 has 103 solutions
 ...snip...
 ```
+
+It can also be built to target WASM using [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/):
+
+```
+$ wasm-pack build --target web -- --features wasm
+
+# start some file server (e.g. miniserve)
+$ miniserve --index index.html
+```
+
+Then you can open your browser to see a simple interactive puzzle solver:
+
+![Today-is solver](today-is-viz.png)

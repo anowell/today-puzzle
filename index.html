@@ -1,0 +1,185 @@
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <style>
+    #puzzle-container {
+      /* 40px * 7 cols + 2px border */
+      width: 282px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    #puzzle-control {
+      margin-bottom: 8px;
+    }
+
+    td {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+
+    .shape-0 {
+      background-color: darkorange;
+    }
+
+    .shape-1 {
+      background-color: hotpink;
+    }
+
+    .shape-2 {
+      background-color: crimson;
+    }
+
+    .shape-3 {
+      background-color: blueviolet;
+    }
+
+    .shape-4 {
+      background-color: green;
+    }
+
+    .shape-5 {
+      background-color: teal;
+    }
+
+    .shape-6 {
+      background-color: darkgreen;
+    }
+
+    .shape-7 {
+      background-color: yellow;
+    }
+
+    .shape-unused {
+      background-color: #333;
+    }
+  </style>
+</head>
+
+<div id="puzzle-container">
+  <div id="puzzle-control">
+    <input id="prev-day" type="button" value="<">
+    <input id="date-picker" type="date">
+    <input id="next-day" type="button" value=">">
+  </div>
+  <div id="puzzle"></div>
+</div>
+
+
+<body>
+  <script type="module">
+    import init, { solve_date, get_piece } from './pkg/today_puzzle.js'
+
+    function monthsForLocale(localeName = 'en-US', monthFormat = 'short') {
+      const format = new Intl
+        .DateTimeFormat(localeName, { month: monthFormat }).format
+      return [...Array(12).keys()]
+        .map((m) => format(new Date(Date.UTC(2021, (m + 1) % 12))))
+    }
+    const MONTHS = monthsForLocale()
+
+    function getSquareText(n) {
+      if (n % 8 == 7 || n == 6 || n == 14 || n > 50) { return '' }
+      if (n < 6) { return MONTHS[n] }
+      if (n >= 7 && n < 14) { return MONTHS[n - 2] }
+      if (n < 24) { return n - 15 }
+      if (n < 32) { return n - 16 }
+      if (n < 40) { return n - 17 }
+      if (n < 48) { return n - 18 }
+      if (n <= 50) { return n - 19 }
+      console.log("Unknown square: " + n)
+    }
+
+    function ymd(date) {
+      const offset = date.getTimezoneOffset()
+      date = new Date(date.getTime() - (offset * 60 * 1000))
+      return date.toISOString().split('T')[0]
+    }
+
+
+    function clearViz() {
+      updateViz(0n)
+    }
+
+    function makeBoard(solution) {
+      let board = new Array(64)
+      for (let i = 0; i < 8; i++) {
+        let piece = get_piece(solution, i)
+        for (let j = 0; j < 64; j++) {
+          if ((piece & (1n << BigInt(j))) !== 0n) {
+            board[j] = i
+          }
+        }
+      }
+      return board
+    }
+
+    function updateViz(board) {
+      let table = '<table>'
+      for (let i = 0; i < 7; i++) {
+        table += '<tr>'
+        for (let j = 0; j < 7; j++) {
+          let text = getSquareText(i * 8 + j)
+          let shape = 'unused'
+          if (text != '') {
+            shape = board[63 - (i * 8 + j)]
+          }
+          table = table + '<td class="shape-' + shape + '">' + text + '</td>'
+        }
+        table += '</tr>'
+      }
+      table += '</table>'
+      document.getElementById("puzzle").innerHTML = table
+    }
+
+
+    function solve(date) {
+      console.log('Solving for ' + date.toLocaleDateString())
+      return makeBoard(solve_date(date.getMonth() + 1, date.getDate()))
+    }
+
+    async function run() {
+      await init()
+
+      let today = new Date()
+      document.getElementById("date-picker").value = ymd(today)
+
+      let solution = solve(today)
+      updateViz(solution)
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById("date-picker").addEventListener("input", function () {
+        clearViz()
+        const offset = this.valueAsDate.getTimezoneOffset()
+        let newDate = new Date(this.valueAsDate.getTime() + (offset * 60 * 1000))
+        let solution = solve(newDate)
+        updateViz(solution)
+      });
+      document.getElementById("prev-day").addEventListener("click", function () {
+        let picker = document.getElementById("date-picker")
+        clearViz()
+        picker.stepDown()
+        setTimeout(() => picker.dispatchEvent(new Event('input')))
+      });
+      document.getElementById("next-day").addEventListener("click", function () {
+        let picker = document.getElementById("date-picker")
+        clearViz()
+        picker.stepUp()
+        setTimeout(() => picker.dispatchEvent(new Event('input')))
+      });
+    }, false)
+
+    run();
+  </script>
+</body>
+
+</html>

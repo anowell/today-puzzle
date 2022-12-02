@@ -5,7 +5,20 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+[features]
+default = ["wasm"]
+wasm = ["wasm-bindgen", "console_error_panic_hook", "wee_alloc"]
+
 [dependencies]
-anyhow = "1.0.66"
 chrono = "0.4.23"
+wasm-bindgen = { version = "0.2.63", optional = true }
+console_error_panic_hook = { version = "0.1.6", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
+
+[dev-dependencies]
+anyhow = "1.0.66"
 clap = { version = "4.0.29", features = ["derive"] }

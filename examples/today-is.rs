@@ -2,7 +2,7 @@ use anyhow::Result;
 use chrono::{Datelike, Days, Local, NaiveDate as Date};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::solve;
+use today_puzzle::{solve, Variant};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -18,6 +18,10 @@ struct Args {
     /// Specifies with solutions to print
     #[arg(short, long, value_enum, default_value_t=Print::First)]
     print: Print,
+
+    /// Puzzle variant - possible values: original, hard
+    #[arg(short, long, default_value_t=Variant::Original)]
+    variant: Variant
 }
 
 #[derive(clap::ValueEnum, Clone, Copy, Debug)]
@@ -30,6 +34,8 @@ enum Print {
     All,
     /// Display only the count of solutions
     Count,
+    /// Only prints indicator if solution exists (exits early if any day is unsolvable)
+    Check,
 }
 
 #[derive(Clone, Copy, Debug)]
@@ -64,28 +70,28 @@ fn main() -> Result<()> {
     if args.all_dates {
         let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
         while d.year() < 2021 {
-            solve_and_print(d.into(), args.print);
+            solve_and_print(args.variant, d.into(), args.print);
             d = d.checked_add_days(Days::new(1)).unwrap();
         }
     } else {
         let d = args.date.unwrap_or_else(MonthDay::today);
-        solve_and_print(d, args.print);
+        solve_and_print(args.variant, d, args.print);
     }
 
     Ok(())
 }
 
-fn solve_and_print(MonthDay(month, day): MonthDay, print: Print) {
+fn solve_and_print(variant: Variant, MonthDay(month, day): MonthDay, print: Print) {
     match print {
-        Print::Count => {}
+        Print::Count | Print::Check => {}
         _ => println!("**** {:02}-{:02} ****", month, day),
     }
 
     let only_first = match print {
-        Print::First => true,
-        _ => false,
+        Print::First | Print::Check => true,
+        Print::All | Print::Count | Print::Summary => false,
     };
-    let solutions = solve(month, day, only_first);
+    let solutions = solve(variant, month, day, only_first);
 
     for solution in &solutions {
         match print {
@@ -94,12 +100,19 @@ fn solve_and_print(MonthDay(month, day): MonthDay, print: Print) {
                 break;
             }
             Print::All => println!("{}", solution),
-            Print::Count => {}
+            Print::Count | Print::Check => {}
         }
     }
 
     match print {
         Print::First => {}
-        _ => println!("{:02}-{:02} has {} solutions", month, day, solutions.len()),
+        Print::Check if solutions.len() > 0 => println!("{:02}-{:02} has solutions", month, day),
+        Print::Check => {
+            println!("{:02}-{:02} has NO solutions", month, day);
+            std::process::exit(0)
+        }
+        Print::All | Print::Summary | Print::Count => {
+            println!("{:02}-{:02} has {} solutions", month, day, solutions.len())
+        }
     }
 }

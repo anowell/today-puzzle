@@ -1,16 +1,25 @@
+use std::{fmt, str::FromStr};
+
 use crate::bitboard::BitBoard;
 
 // Pieces with there rotations and reflections created at compile time
-pub const PIECE_RECT: Piece<2> = Piece::<2>::rotations(0x0077);
-pub const PIECE_U: Piece<4> = Piece::<4>::rotations(0x0313);
-pub const PIECE_CORNER: Piece<4> = Piece::<4>::rotations(0x0117);
-pub const PIECE_TALL_S: Piece<4> = Piece::<4>::rotations_and_reflections(0x0326);
-pub const PIECE_L: Piece<8> = Piece::<8>::rotations_and_reflections(0x001F);
-pub const PIECE_LONG_Z: Piece<8> = Piece::<8>::rotations_and_reflections(0x003E);
-pub const PIECE_UNEVEN_T: Piece<8> = Piece::<8>::rotations_and_reflections(0x002F);
-pub const PIECE_SIX: Piece<8> = Piece::<8>::rotations_and_reflections(0x0331);
+pub const PIECE_RECT: Piece<2> = Piece::<2>::rotations(0x0077); // 6 squares
+pub const PIECE_U: Piece<4> = Piece::<4>::rotations(0x0313);    // 5 squares
+pub const PIECE_CORNER: Piece<4> = Piece::<4>::rotations(0x0117); // 5 squares
+pub const PIECE_TALL_S: Piece<4> = Piece::<4>::rotations_and_reflections(0x0326); // 5 squares
+pub const PIECE_L: Piece<8> = Piece::<8>::rotations_and_reflections(0x001F); // 5 squares
+pub const PIECE_LONG_Z: Piece<8> = Piece::<8>::rotations_and_reflections(0x003E); // 5 squares
+pub const PIECE_UNEVEN_T: Piece<8> = Piece::<8>::rotations_and_reflections(0x002F); // 5 squares
+pub const PIECE_SIX: Piece<8> = Piece::<8>::rotations_and_reflections(0x0331); // 5 squares
 
-pub const PIECES: [PieceRef; 8] = [
+// Alternate pieces
+pub const PIECE_W: Piece<4> = Piece::<4>::rotations(0x0631);     // 5 squares
+pub const PIECE_H: Piece<8> = Piece::<8>::rotations_and_reflections(0x0175); // 6 squares
+
+pub const PIECE_COUNT: usize = 8;
+
+/// The original pieces
+pub const PIECES: [PieceRef; PIECE_COUNT] = [
     PIECE_RECT.as_ref(),
     PIECE_U.as_ref(),
     PIECE_CORNER.as_ref(),
@@ -20,6 +29,53 @@ pub const PIECES: [PieceRef; 8] = [
     PIECE_UNEVEN_T.as_ref(),
     PIECE_SIX.as_ref(),
 ];
+
+/// Alternate set of pieces (fewer total solutions)
+pub const PIECES_HARD: [PieceRef; PIECE_COUNT] = [
+    PIECE_H.as_ref(),
+    PIECE_U.as_ref(),
+    PIECE_CORNER.as_ref(),
+    PIECE_W.as_ref(),
+    PIECE_L.as_ref(),
+    PIECE_LONG_Z.as_ref(),
+    PIECE_UNEVEN_T.as_ref(),
+    PIECE_SIX.as_ref(),
+];
+
+#[derive(Debug, Copy, Clone)]
+pub enum Variant {
+    Original = 0,
+    Hard = 1,
+}
+
+impl Variant {
+    pub fn pieces(&self) -> [PieceRef; PIECE_COUNT] {
+        match self {
+            Variant::Original => PIECES,
+            Variant::Hard => PIECES_HARD,
+        }
+    }
+}
+
+impl FromStr for Variant {
+    type Err = &'static str;
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "original" => Ok(Variant::Original),
+            "hard" => Ok(Variant::Hard),
+            _ => Err("Unsupported variant"),
+        }
+    }
+}
+
+impl fmt::Display for Variant {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Variant::Original => write!(f, "original"),
+            Variant::Hard => write!(f, "hard"),
+        }
+    }
+}
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Piece<const N: usize> {
@@ -35,6 +91,15 @@ impl <const N: usize> Piece<N> {
     pub const fn as_ref(&self) -> PieceRef {
         PieceRef {
             variations: &self.variations
+        }
+    }
+}
+
+impl Piece<1> {
+    #[allow(unused)]
+    const fn new(shape: u16) -> Piece<1> {
+        Piece {
+            variations: [BitPiece(shape)],
         }
     }
 }

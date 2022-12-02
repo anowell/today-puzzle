@@ -1,6 +1,7 @@
 use bitboard::BitBoard;
 use chrono::NaiveDate as Date;
-use piece::{PieceRef, PIECES};
+pub use piece::Variant;
+use piece::{PieceRef, PIECE_COUNT};
 use std::fmt;
 
 #[cfg(feature = "wasm")]
@@ -18,14 +19,14 @@ pub mod piece;
 #[derive(Copy, Clone, PartialEq, Debug)]
 pub struct Board {
     combined: BitBoard,
-    pieces: [BitBoard; PIECES.len()],
+    pieces: [BitBoard; PIECE_COUNT],
     piece_count: usize,
 }
 
 impl Board {
     pub fn new() -> Board {
         Board {
-            pieces: [BitBoard(0); PIECES.len()],
+            pieces: [BitBoard(0); PIECE_COUNT],
             combined: bitboard::EMPTY,
             piece_count: 0,
         }
@@ -34,7 +35,7 @@ impl Board {
     pub fn from_month_day(month: u32, day: u32) -> Board {
         let date_bits = !BitBoard::from_date(Date::from_ymd_opt(2020, month, day).unwrap());
         Board {
-            pieces: [BitBoard(0); PIECES.len()],
+            pieces: [BitBoard(0); PIECE_COUNT],
             combined: bitboard::EMPTY | date_bits,
             piece_count: 0,
         }
@@ -73,7 +74,7 @@ impl fmt::Display for Board {
                 map[63 - x] = 'X'
             }
         }
-        for i in 0..PIECES.len() {
+        for i in 0..PIECE_COUNT {
             for x in 0..64 {
                 if self.pieces[i].0 & (1u64 << x) == (1u64 << x) {
                     map[63 - x] = char::from_u32(u32::from('A') + i as u32).unwrap();
@@ -89,20 +90,20 @@ impl fmt::Display for Board {
     }
 }
 
-
-pub fn solve(month: u32, day: u32, only_first: bool) -> Vec<Board> {
+pub fn solve(variant: Variant, month: u32, day: u32, only_first: bool) -> Vec<Board> {
     let mut dfs = vec![Board::from_month_day(month, day)];
     let mut solutions = Vec::new();
+    let pieces = variant.pieces();
 
     while !dfs.is_empty() {
         let board = dfs.pop().unwrap();
-        if board.piece_count == PIECES.len() {
+        if board.piece_count == PIECE_COUNT {
             solutions.push(board);
             if only_first {
                 break;
             }
         } else {
-            board.append_valid_placements(PIECES[board.piece_count], &mut dfs);
+            board.append_valid_placements(pieces[board.piece_count], &mut dfs);
         }
     }
 
@@ -111,8 +112,13 @@ pub fn solve(month: u32, day: u32, only_first: bool) -> Vec<Board> {
 
 #[cfg(feature = "wasm")]
 #[wasm_bindgen]
-pub fn solve_date(month: u32, day: u32) -> Board {
-    let solutions = solve(month, day, true);
+pub fn solve_date(month: u32, day: u32, variant: u32) -> Board {
+    let variant = match variant {
+        0 => Variant::Original,
+        1 => Variant::Hard,
+        _ => unimplemented!("Only support variants 0 and 1"),
+    };
+    let solutions = solve(variant, month, day, true);
     solutions[0]
 }
 

@@ -65,6 +65,10 @@
 </head>
 
 <div id="puzzle-container">
+  <select id="variant-picker">
+    <option value="0" selected>Original</option>
+    <option value="1">Hard</option>
+  </select>
   <div id="puzzle-control">
     <input id="prev-day" type="button" value="<">
     <input id="date-picker" type="date">
@@ -141,9 +145,9 @@
     }
 
 
-    function solve(date) {
+    function solve(variant, date) {
       console.log('Solving for ' + date.toLocaleDateString())
-      return makeBoard(solve_date(date.getMonth() + 1, date.getDate()))
+      return makeBoard(solve_date(date.getMonth() + 1, date.getDate(), variant))
     }
 
     async function run() {
@@ -151,30 +155,34 @@
 
       let today = new Date()
       document.getElementById("date-picker").value = ymd(today)
+      solveAndUpdate()
+    }
 
-      let solution = solve(today)
+    function solveAndUpdate() {
+      let dp = document.getElementById("date-picker")
+      let vp = document.getElementById("variant-picker")
+      clearViz()
+      const offset = dp.valueAsDate.getTimezoneOffset()
+      let newDate = new Date(dp.valueAsDate.getTime() + (offset * 60 * 1000))
+      let variant = vp.value
+      let solution = solve(variant, newDate)
       updateViz(solution)
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById("date-picker").addEventListener("input", function () {
-        clearViz()
-        const offset = this.valueAsDate.getTimezoneOffset()
-        let newDate = new Date(this.valueAsDate.getTime() + (offset * 60 * 1000))
-        let solution = solve(newDate)
-        updateViz(solution)
-      });
+      document.getElementById("date-picker").addEventListener("input", solveAndUpdate);
+      document.getElementById("variant-picker").addEventListener("change", solveAndUpdate);
       document.getElementById("prev-day").addEventListener("click", function () {
         let picker = document.getElementById("date-picker")
         clearViz()
         picker.stepDown()
-        setTimeout(() => picker.dispatchEvent(new Event('input')))
+        setTimeout(solveAndUpdate)
       });
       document.getElementById("next-day").addEventListener("click", function () {
         let picker = document.getElementById("date-picker")
         clearViz()
         picker.stepUp()
-        setTimeout(() => picker.dispatchEvent(new Event('input')))
+        setTimeout(solveAndUpdate)
       });
     }, false)
 

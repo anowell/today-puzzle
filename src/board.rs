@@ -6,7 +6,7 @@ use std::fmt;
 
 
 /// Board that uses N pieces for it's solution
-#[derive(Copy, Clone, PartialEq, Debug)]
+#[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct Board<const N: usize> {
     combined: BitBoard,
     pieces: [BitBoard; N],
@@ -14,7 +14,7 @@ pub struct Board<const N: usize> {
 }
 
 /// Soolution is just a collection of bitboards that represent where each piece is
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug)]
 pub struct Solution(pub Vec<BitBoard>);
 
 

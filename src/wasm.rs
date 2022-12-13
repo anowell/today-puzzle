@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use wasm_bindgen::prelude::*;
 use crate::variants::{Variant, DragonFjord, CreaMakerspace, JarringWords, Tetromino};
 use chrono::NaiveDate;

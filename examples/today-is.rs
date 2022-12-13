@@ -3,7 +3,6 @@ use chrono::{Datelike, Days, Local, NaiveDate};
 use clap::Parser;
 use std::str::FromStr;
 use today_puzzle::variants::{Variant, DragonFjord, CreaMakerspace, JarringWords, Tetromino};
-use today_puzzle;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -122,11 +121,11 @@ fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: P
 
     match print {
         Print::First => {}
-        Print::Check if solutions.len() > 0 => println!("{:02}-{:02} has solutions", month, day),
-        Print::Check => {
+        Print::Check if solutions.is_empty() => {
             println!("{:02}-{:02} has NO solutions", month, day);
             std::process::exit(0)
         }
+        Print::Check => println!("{:02}-{:02} has solutions", month, day),
         Print::All | Print::Summary | Print::Count => {
             println!("{:02}-{:02} has {} solutions", month, day, solutions.len())
         }

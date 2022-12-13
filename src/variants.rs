@@ -3,10 +3,10 @@ use crate::board::{Board, Solution};
 use crate::piece::*;
 use chrono::{Datelike, NaiveDate};
 
-/// Board use by: 
+/// Board use by:
 /// - DragonFjord [A-Puzzle-A-Day](https://www.dragonfjord.com/product/a-puzzle-a-day/)
 /// - JarringWords [Calendar Puzzle](https://www.etsy.com/jp/listing/1032608229/)
-/// - CreaMakerspace [Calendar Puzzle](https://anowell.com/calendar-puzzle)
+/// - CreaMakerspace [Calendar Puzzle](https://anowell.com/posts/calendar-puzzle)
 ///
 /// Board is shaped as follows:
 ///
@@ -25,7 +25,7 @@ pub const BITBOARD_STANDARD: BitBoard = BitBoard(0x0303_0101_0101_1FFF);
 
 
 /// Board for Tetromino [Puzzle containing quad pieces](https://puzzleparadise.net/listing/puzzle-calendar-solve-for-each-day-of-the-year-cherry-pieces-and-walnut-border/107535)
-/// 
+///
 /// Board is shaped as follows:
 ///
 /// ```ignore
@@ -45,7 +45,7 @@ pub trait Variant<const N: usize>: Sized {
     fn pieces() -> [Piece; N];
 
     fn solve_once(date: NaiveDate) -> Option<Solution> {
-        Self::board(date).solve(&Self::pieces(), true).first().map(|b| b.clone())
+        Self::board(date).solve(&Self::pieces(), true).first().cloned()
     }
 
     fn solve_fully(date: NaiveDate) -> Vec<Solution> {

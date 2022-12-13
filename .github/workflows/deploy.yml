@@ -1,0 +1,31 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    uses: anowell/today-puzzle/.github/workflows/build.yml@main
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - name: WASM Build
+        run: |
+          wasm-pack build --target web --release --out-dir public/pkg
+          rm ./public/pkg/{.gitignore,package.json,*.ts,*.md,LICENSE}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+

@@ -4,7 +4,7 @@ use crate::bitboard::BitBoard;
 
 
 /// Each piece fits on 4x4 bit board.
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub struct BitPiece(pub u16);
 
 
@@ -58,7 +58,7 @@ impl BitPiece {
             j = 0;
             while j < 4 {
                 if self.0 & (1 << (i * 4 + j)) != 0 {
-                    bp.0 = bp.0 | (1 << (i * 4 + 3 - j))
+                    bp.0 |= 1 << (i * 4 + 3 - j)
                 }
                 j += 1;
             }
@@ -78,7 +78,7 @@ impl BitPiece {
             j = 0;
             while j < 4 {
                 if self.0 & (1 << (4 * i + j)) != 0 {
-                    bp.0 = bp.0 | (1 << (4 * j + 3 - i))
+                    bp.0 |= 1 << (4 * j + 3 - i)
                 }
                 j += 1;
             }
@@ -124,7 +124,7 @@ impl BitPiece {
     }
 
     /// Creates an 8x8 bitboard with the piece at a specific coordinate
-    pub fn to_bitboard(&self, x: usize, y: usize) -> BitBoard {
+    pub fn to_bitboard(self, x: usize, y: usize) -> BitBoard {
         let mut bp = BitBoard::new(0);
         for i in 0..4 {
             let seg = (self.0 & (0xF << (4 * i))) >> (4 * i);

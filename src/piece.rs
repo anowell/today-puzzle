@@ -20,10 +20,10 @@ pub const PIECE_LINE: Variations<2> = Variations::<2>::rotations(0x000F); // 4 s
 pub const PIECE_Z: Variations<4> = Variations::<4>::rotations_and_reflections(0x0036); // 4 squares
 
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Variations<const N: usize>(pub [BitPiece; N]);
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Piece {
     pub variations: &'static [BitPiece],
 }

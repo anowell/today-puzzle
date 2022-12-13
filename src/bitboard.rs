@@ -16,7 +16,7 @@ use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, M
 /// 29 30 31 XX XX XX XX XX
 /// ```
 ///
-#[derive(PartialEq, PartialOrd, Clone, Copy, Debug, Default)]
+#[derive(PartialEq, Eq, PartialOrd, Clone, Copy, Debug, Default)]
 pub struct BitBoard(pub u64);
 
 // Impl BitAnd
@@ -244,7 +244,7 @@ impl fmt::Display for BitBoard {
                 s.push_str(". ");
             }
             if x % 8 == 7 {
-                s.push_str("\n");
+                s.push('\n');
             }
         }
         write!(f, "{}", s)

@@ -1,0 +1,25 @@
+name: Build and Test
+on:
+  push:
+  pull_request:
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: cargo clippy
+        run: |
+          cargo clippy --all-features --all-targets -- -D warnings
+      - name: cargo test
+        run: |
+          cargo test
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - name: WASM build
+        run: |
+          wasm-pack build --target web --out-dir public/pkg -- --features wasm

@@ -1,11 +1,12 @@
 use std::fmt;
 use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, Mul, Not};
-use chrono::{NaiveDate as Date, Datelike};
+
+
 
 /// A good old-fashioned bitboard (borrowed from chess crate)
 ///
 /// Board is shaped as follows:
-/// ```
+/// ```ignore
 /// Ja Fe Ma Ap Ma Ju XX XX
 /// Ju Au Se Oc No De XX XX
 /// 01 02 03 04 05 06 07 XX
@@ -15,17 +16,8 @@ use chrono::{NaiveDate as Date, Datelike};
 /// 29 30 31 XX XX XX XX XX
 /// ```
 ///
-/// You *do* have access to the actual value, but you are probably better off
-/// using the implemented operators to work with this object.
-///
-///
 #[derive(PartialEq, PartialOrd, Clone, Copy, Debug, Default)]
 pub struct BitBoard(pub u64);
-
-
-/// An empty board is defined by this shape - very different than the empty chess board
-pub const EMPTY: BitBoard = BitBoard(0x0303_0101_0101_1FFF);
-
 
 // Impl BitAnd
 impl BitAnd for BitBoard {
@@ -266,40 +258,8 @@ impl BitBoard {
         BitBoard(b)
     }
 
-    /// Generates a bitboard with only the month and day cleared
-    pub fn from_date(d: Date) -> BitBoard {
-      let month_part = match d.month() {
-        m @ 1..=6 => 1 << (16-m),
-        m @ 7..=12 => 1 << (14-m),
-        _ => unreachable!("Invalid month"),
-      };
-      let day_part = match d.day() {
-        d @ 1..=7 => 1 << (48-d),
-        d @ 8..=14 => 1 << (47-d),
-        d @ 15..=21 => 1 << (46-d),
-        d @ 22..=28 => 1 << (45-d),
-        d @ 29..=31 => 1 << (44-d),
-        _ => unreachable!("Invalid day"),
-      };
-
-      BitBoard(!((month_part << 48) | day_part))
-    }
-
-    /// Count the number of `Squares` set in this `BitBoard`
     #[inline]
-    pub fn popcnt(&self) -> u32 {
-        self.0.count_ones()
-    }
-
-    /// Reverse this `BitBoard`.  Look at it from the opponents perspective.
-    #[inline]
-    pub fn reverse_colors(&self) -> BitBoard {
-        BitBoard(self.0.swap_bytes())
-    }
-
-    /// Convert this `BitBoard` to a `usize` (for table lookups)
-    #[inline]
-    pub fn to_size(&self, rightshift: u8) -> usize {
-        (self.0 >> rightshift) as usize
+    pub fn intersects(&self, other: BitBoard) -> bool {
+        self.0 & other.0 == 0
     }
 }

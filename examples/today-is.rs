@@ -1,8 +1,9 @@
 use anyhow::Result;
-use chrono::{Datelike, Days, Local, NaiveDate as Date};
+use chrono::{Datelike, Days, Local, NaiveDate};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::{solve, Variant};
+use today_puzzle::variants::{Variant, DragonFjord, CreaMakerspace, JarringWords, Tetromino};
+use today_puzzle;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -19,9 +20,9 @@ struct Args {
     #[arg(short, long, value_enum, default_value_t=Print::First)]
     print: Print,
 
-    /// Puzzle variant - possible values: original, hard
-    #[arg(short, long, default_value_t=Variant::Original)]
-    variant: Variant
+    /// Puzzle variant
+    #[arg(short, long, value_enum, default_value_t=VariantOpt::DragonFjord)]
+    variant: VariantOpt
 }
 
 #[derive(clap::ValueEnum, Clone, Copy, Debug)]
@@ -38,6 +39,14 @@ enum Print {
     Check,
 }
 
+#[derive(clap::ValueEnum, Clone, Copy, Debug)]
+enum VariantOpt {
+    DragonFjord,
+    CreaMakerspace,
+    JarringWords,
+    Tetromino,
+}
+
 #[derive(Clone, Copy, Debug)]
 struct MonthDay(u32, u32);
 
@@ -48,8 +57,8 @@ impl MonthDay {
     }
 }
 
-impl From<Date> for MonthDay {
-    fn from(d: Date) -> MonthDay {
+impl From<NaiveDate> for MonthDay {
+    fn from(d: NaiveDate) -> MonthDay {
         MonthDay(d.month(), d.day())
     }
 }
@@ -59,7 +68,7 @@ impl FromStr for MonthDay {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         // Prepend 2020 since it's a leap year
         let s2020 = format!("2020-{}", s);
-        let d = Date::parse_from_str(&s2020, "%Y-%m-%d")?;
+        let d = NaiveDate::parse_from_str(&s2020, "%Y-%m-%d")?;
         Ok(MonthDay(d.month(), d.day()))
     }
 }
@@ -68,7 +77,7 @@ fn main() -> Result<()> {
     let args = Args::parse();
 
     if args.all_dates {
-        let mut d = Date::from_ymd_opt(2020, 1, 1).unwrap();
+        let mut d = NaiveDate::from_ymd_opt(2020, 1, 1).unwrap();
         while d.year() < 2021 {
             solve_and_print(args.variant, d.into(), args.print);
             d = d.checked_add_days(Days::new(1)).unwrap();
@@ -81,7 +90,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn solve_and_print(variant: Variant, MonthDay(month, day): MonthDay, print: Print) {
+fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: Print) {
     match print {
         Print::Count | Print::Check => {}
         _ => println!("**** {:02}-{:02} ****", month, day),
@@ -91,7 +100,14 @@ fn solve_and_print(variant: Variant, MonthDay(month, day): MonthDay, print: Prin
         Print::First | Print::Check => true,
         Print::All | Print::Count | Print::Summary => false,
     };
-    let solutions = solve(variant, month, day, only_first);
+
+    let date = NaiveDate::from_ymd_opt(2020, month, day).unwrap();
+    let solutions = match variant {
+        VariantOpt::DragonFjord => DragonFjord::board(date).solve(&DragonFjord::pieces(), only_first),
+        VariantOpt::CreaMakerspace => CreaMakerspace::board(date).solve(&CreaMakerspace::pieces(), only_first),
+        VariantOpt::JarringWords => JarringWords::board(date).solve(&JarringWords::pieces(), only_first),
+        VariantOpt::Tetromino => Tetromino::board(date).solve(&Tetromino::pieces(), only_first),
+    };
 
     for solution in &solutions {
         match print {
@@ -116,3 +132,4 @@ fn solve_and_print(variant: Variant, MonthDay(month, day): MonthDay, print: Prin
         }
     }
 }
+

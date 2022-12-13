@@ -1,0 +1,230 @@
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <style>
+    #puzzle-container {
+      /* 40px * 7 cols + 2px border */
+      width: 282px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    #puzzle-control {
+      margin-bottom: 8px;
+    }
+
+    td {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+/*      border: 1px solid black;*/
+    }
+
+    /* Color Palette: https://clrs.cc/ */
+
+    .shape-0 {
+      background-color: #0074D9;
+    }
+
+    .shape-1 {
+      background-color: #B10DC9;
+    }
+
+    .shape-2 {
+      background-color: #FF4136;
+    }
+
+    .shape-3 {
+      background-color: #3D9970;
+    }
+
+    .shape-4 {
+      background-color: #FFDC00;
+    }
+
+    .shape-5 {
+      background-color: #F012BE;
+    }
+
+    .shape-6 {
+      background-color: #FF851B;
+    }
+
+    .shape-7 {
+      background-color: #39CCCC;
+    }
+
+    .shape-8 {
+      background-color: #85144b;
+    }
+
+    .shape-9 {
+      background-color: #7FDBFF;
+    }
+
+    .shape-10 {
+      background-color: #01FF70;
+    }
+
+    .shape-unused {
+      background-color: #FFF;
+    }
+  </style>
+</head>
+
+<div id="puzzle-container">
+  <select id="variant-picker">
+    <option value="0" selected>DragonFjord</option>
+    <option value="1" selected>JarringWords</option>
+    <option value="2">CreaMakerspace</option>
+    <option value="3">Tetromino</option>
+  </select>
+  <div id="puzzle-control">
+    <input id="prev-day" type="button" value="<">
+    <input id="date-picker" type="date">
+    <input id="next-day" type="button" value=">">
+  </div>
+  <div id="puzzle"></div>
+</div>
+
+
+<body>
+  <script type="module">
+    import init, { solve_once } from './pkg/today_puzzle.js'
+
+    function monthsForLocale(localeName = 'en-US', monthFormat = 'short') {
+      const format = new Intl
+        .DateTimeFormat(localeName, { month: monthFormat }).format
+      return [...Array(12).keys()]
+        .map((m) => format(new Date(Date.UTC(2021, (m + 1) % 12))))
+    }
+    const MONTHS = monthsForLocale()
+
+
+    function getStandardSquareText(n) {
+      if (n % 8 === 7 || n === 6 || n === 14 || n > 50) { return '' }
+      if (n < 6) { return MONTHS[n] }
+      if (n >= 7 && n < 14) { return MONTHS[n - 2] }
+      if (n < 24) { return n - 15 }
+      if (n < 32) { return n - 16 }
+      if (n < 40) { return n - 17 }
+      if (n < 48) { return n - 18 }
+      if (n <= 50) { return n - 19 }
+      console.log("Unknown square: " + n)
+    }
+
+    function getTetrominoSquareText(n) {
+      if (n % 8 === 7 || n === 6 || n === 14 || (n >= 48 && n <= 51) || n > 54) { return '' }
+      if (n < 6) { return MONTHS[n] }
+      if (n >= 7 && n < 14) { return MONTHS[n - 2] }
+      if (n < 24) { return n - 15 }
+      if (n < 32) { return n - 16 }
+      if (n < 40) { return n - 17 }
+      if (n < 48) { return n - 18 }
+      if (n <= 54) { return n - 15 }
+      console.log("Unknown square: " + n)
+    }
+
+    let getSquareText = getStandardSquareText
+
+
+    function ymd(date) {
+      const offset = date.getTimezoneOffset()
+      date = new Date(date.getTime() - (offset * 60 * 1000))
+      return date.toISOString().split('T')[0]
+    }
+
+
+    function clearViz() {
+      updateViz(0n)
+    }
+
+    function makeBoard(pieces) {
+      let board = new Array(64)
+      for (let i = 0; i < pieces.length; i++) {
+        for (let j = 0; j < 64; j++) {
+          if ((pieces[i] & (1n << BigInt(j))) !== 0n) {
+            board[j] = i
+          }
+        }
+      }
+      return board
+    }
+
+    function updateViz(board) {
+      let table = '<table>'
+      for (let i = 0; i < 8; i++) {
+        table += '<tr>'
+        for (let j = 0; j < 8; j++) {
+          let text = getSquareText(i * 8 + j)
+          let shape = 'unused'
+          if (text != '') {
+            shape = board[63 - (i * 8 + j)]
+          }
+          table = table + '<td class="shape-' + shape + '">' + text + '</td>'
+        }
+        table += '</tr>'
+      }
+      table += '</table>'
+      document.getElementById("puzzle").innerHTML = table
+    }
+
+
+    function solve(variant, date) {
+      console.log('Solving for ' + date.toLocaleDateString())
+      return makeBoard(solve_once(date.getMonth() + 1, date.getDate(), variant))
+    }
+
+    async function run() {
+      await init()
+
+      let today = new Date()
+      document.getElementById("date-picker").value = ymd(today)
+      solveAndUpdate()
+    }
+
+    function solveAndUpdate() {
+      let dp = document.getElementById("date-picker")
+      let vp = document.getElementById("variant-picker")
+
+      clearViz()
+      const offset = dp.valueAsDate.getTimezoneOffset()
+      let newDate = new Date(dp.valueAsDate.getTime() + (offset * 60 * 1000))
+      let variant = vp.value
+      if(variant === "3") {
+        getSquareText = getTetrominoSquareText
+      } else {
+        getSquareText = getStandardSquareText        
+      }      
+      let pieces = solve(variant, newDate)
+      updateViz(pieces)
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById("date-picker").addEventListener("input", solveAndUpdate);
+      document.getElementById("variant-picker").addEventListener("change", solveAndUpdate);
+      document.getElementById("prev-day").addEventListener("click", function () {
+        let picker = document.getElementById("date-picker")
+        // clearViz()
+        picker.stepDown()
+        setTimeout(solveAndUpdate)
+      });
+      document.getElementById("next-day").addEventListener("click", function () {
+        let picker = document.getElementById("date-picker")
+        // clearViz()
+        picker.stepUp()
+        setTimeout(solveAndUpdate)
+      });
+    }, false)
+
+    run();
+  </script>
+</body>
+
+</html>

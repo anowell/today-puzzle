@@ -22,8 +22,6 @@ use chrono::{Datelike, NaiveDate};
 /// ```
 pub const BITBOARD_STANDARD: BitBoard = BitBoard(0x0303_0101_0101_1FFF);
 
-
-
 /// Board for Tetromino [Puzzle containing quad pieces](https://puzzleparadise.net/listing/puzzle-calendar-solve-for-each-day-of-the-year-cherry-pieces-and-walnut-border/107535)
 ///
 /// Board is shaped as follows:
@@ -45,7 +43,10 @@ pub trait Variant<const N: usize>: Sized {
     fn pieces() -> [Piece; N];
 
     fn solve_once(date: NaiveDate) -> Option<Solution> {
-        Self::board(date).solve(&Self::pieces(), true).first().cloned()
+        Self::board(date)
+            .solve(&Self::pieces(), true)
+            .first()
+            .cloned()
     }
 
     fn solve_fully(date: NaiveDate) -> Vec<Solution> {

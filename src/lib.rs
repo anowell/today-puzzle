@@ -5,11 +5,11 @@ pub use board::Board;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-pub mod piece;
-pub mod variants;
-mod board;
 mod bitboard;
 mod bitpiece;
+mod board;
+pub mod piece;
+pub mod variants;
 
 #[cfg(feature = "wasm")]
 mod wasm;

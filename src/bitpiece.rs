@@ -1,12 +1,10 @@
-use std::{fmt};
+use std::fmt;
 
 use crate::bitboard::BitBoard;
-
 
 /// Each piece fits on 4x4 bit board.
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub struct BitPiece(pub u16);
-
 
 impl fmt::Debug for BitPiece {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -43,7 +41,6 @@ impl BitPiece {
         } else {
             4
         }
-
     }
 
     /// Horizontal flip
@@ -136,7 +133,6 @@ impl BitPiece {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -158,7 +154,6 @@ mod tests {
         assert_eq!(BitPiece(0x32), piece.rotate().rotate().rotate());
         assert_eq!(BitPiece(0x31), piece.rotate().rotate().rotate().rotate());
     }
-
 
     #[test]
     fn piece_flip() {

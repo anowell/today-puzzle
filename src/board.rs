@@ -1,9 +1,7 @@
-
 use crate::bitboard::BitBoard;
 use crate::bitpiece::BitPiece;
-use crate::piece::{Piece};
+use crate::piece::Piece;
 use std::fmt;
-
 
 /// Board that uses N pieces for it's solution
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
@@ -16,7 +14,6 @@ pub struct Board<const N: usize> {
 /// Soolution is just a collection of bitboards that represent where each piece is
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub struct Solution(pub Vec<BitBoard>);
-
 
 impl<const N: usize> Board<N> {
     pub fn new(base: BitBoard, solved: BitBoard) -> Board<N> {
@@ -31,7 +28,12 @@ impl<const N: usize> Board<N> {
         &self.pieces
     }
 
-    pub fn place_piece(&self, piece: BitPiece, x: usize, y: usize) -> Result<Board<N>, &'static str> {
+    pub fn place_piece(
+        &self,
+        piece: BitPiece,
+        x: usize,
+        y: usize,
+    ) -> Result<Board<N>, &'static str> {
         let piece_bb = piece.to_bitboard(x, y);
         // Check if piece_bb can be placed on the board without overlap
         if piece_bb.intersects(self.combined) {
@@ -116,7 +118,6 @@ impl<const N: usize> fmt::Display for Board<N> {
         write!(f, "{}", s)
     }
 }
-
 
 impl fmt::Display for Solution {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

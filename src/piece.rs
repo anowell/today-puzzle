@@ -19,7 +19,6 @@ pub const PIECE_T: Variations<4> = Variations::<4>::rotations(0x0027); // 4 squa
 pub const PIECE_LINE: Variations<2> = Variations::<2>::rotations(0x000F); // 4 squares
 pub const PIECE_Z: Variations<4> = Variations::<4>::rotations_and_reflections(0x0036); // 4 squares
 
-
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Variations<const N: usize>(pub [BitPiece; N]);
 

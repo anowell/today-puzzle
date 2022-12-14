@@ -17,7 +17,7 @@ jobs:
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
       - name: WASM Build
         run: |
-          wasm-pack build --target web --release --out-dir public/pkg
+          wasm-pack build --target web --release --out-dir public/pkg -- --features wasm
           rm ./public/pkg/{.gitignore,package.json,*.ts,*.md,LICENSE}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,8 +1,8 @@
 use anyhow::Result;
-use chrono::{Datelike, Days, Local, NaiveDate};
+use chrono::{Datelike, Days, Local, NaiveDate, Utc};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant};
+use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -44,6 +44,7 @@ enum VariantOpt {
     CreaMakerspace,
     JarringWords,
     Tetromino,
+    Weekday,
 }
 
 // Date structure that we can parse as either M-D or Y-M-D
@@ -69,9 +70,10 @@ impl FromStr for LazyDate {
         let d = match NaiveDate::parse_from_str(s, "%Y-%m-%d") {
             Ok(d) => d,
             Err(err) => {
-                // Prepend 2020 since it's a leap year
-                let s2020 = format!("2020-{}", s);
-                NaiveDate::parse_from_str(&s2020, "%Y-%m-%d").map_err(|_| err)?
+                // Prepend the current year
+                let year = Utc::now().year();
+                let maybe_ymd = format!("{}-{}", year, s);
+                NaiveDate::parse_from_str(&maybe_ymd, "%Y-%m-%d").map_err(|_| err)?
             }
         };
 
@@ -118,6 +120,7 @@ fn solve_and_print(variant: VariantOpt, LazyDate(date): LazyDate, print: Print) 
             JarringWords::board(date).solve(&JarringWords::pieces(), only_first)
         }
         VariantOpt::Tetromino => Tetromino::board(date).solve(&Tetromino::pieces(), only_first),
+        VariantOpt::Weekday => Weekday::board(date).solve(&Weekday::pieces(), only_first),
     };
 
     for solution in &solutions {

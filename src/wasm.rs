@@ -1,18 +1,19 @@
 #![allow(dead_code)]
 
-use crate::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant};
-use chrono::NaiveDate;
+use crate::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday};
+use chrono::NaiveDateTime;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 /// Finds the first solution for a given variant, and returns an array of piece bitmaps
-pub fn solve_once(month: u32, day: u32, variant: u32) -> Result<Box<[u64]>, String> {
-    let date = NaiveDate::from_ymd_opt(2020, month, day).unwrap();
+pub fn solve_once(epoch_ms: i64, variant: u32) -> Result<Box<[u64]>, String> {
+    let date = NaiveDateTime::from_timestamp_millis(epoch_ms).unwrap().date();
     let solution = match variant {
         0 => DragonFjord::solve_once(date),
         1 => JarringWords::solve_once(date),
         2 => CreaMakerspace::solve_once(date),
         3 => Tetromino::solve_once(date),
+        4 => Weekday::solve_once(date),
         _ => unimplemented!("Unsupported variant"),
     };
 
@@ -24,8 +25,8 @@ pub fn solve_once(month: u32, day: u32, variant: u32) -> Result<Box<[u64]>, Stri
             .collect::<Vec<u64>>()
             .into_boxed_slice()),
         None => Err(format!(
-            "No solution for variant {} on {}-{}",
-            variant, month, day
+            "No solution for variant {} on {}",
+            variant, date
         )),
     }
 }

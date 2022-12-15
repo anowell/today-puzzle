@@ -83,6 +83,7 @@
     <option value="1" selected>JarringWords</option>
     <option value="2">CreaMakerspace</option>
     <option value="3">Tetromino</option>
+    <option value="4">Weekday</option>
   </select>
   <div id="puzzle-control">
     <input id="prev-day" type="button" value="<">
@@ -97,14 +98,23 @@
   <script type="module">
     import init, { solve_once } from './pkg/today_puzzle.js'
 
-    function monthsForLocale(localeName = 'en-US', monthFormat = 'short') {
-      const format = new Intl
-        .DateTimeFormat(localeName, { month: monthFormat }).format
+    function locale(property = 'month', localeName = 'en-US', format = 'short') {
+      let opt = {}
+      opt[property] = format
+      return new Intl.DateTimeFormat(localeName, opt).format
+    }
+    function monthsForLocale() {
+      const format = locale('month')
       return [...Array(12).keys()]
         .map((m) => format(new Date(Date.UTC(2021, (m + 1) % 12))))
     }
+    function weekdaysForLocale() {
+      const format = locale('weekday')
+      return [...Array(7).keys()]
+        .map((d) => format(new Date(Date.UTC(2021, 0, d + 4))))
+    }
     const MONTHS = monthsForLocale()
-
+    const WEEKDAYS = weekdaysForLocale()
 
     function getStandardSquareText(n) {
       if (n % 8 === 7 || n === 6 || n === 14 || n > 50) { return '' }
@@ -127,6 +137,14 @@
       if (n < 40) { return n - 17 }
       if (n < 48) { return n - 18 }
       if (n <= 54) { return n - 23 }
+      console.log("Unknown square: " + n)
+    }
+
+    function getWeekdaySquareText(n) {
+      if (n <= 50) { return getStandardSquareText(n) }
+      if (n <= 54) { return WEEKDAYS[n-51] }
+      if (n <= 59 || n > 62) { return '' }
+      if (n <= 62) { return WEEKDAYS[n-56]}
       console.log("Unknown square: " + n)
     }
 
@@ -176,7 +194,7 @@
 
     function solve(variant, date) {
       console.log('Solving for ' + date.toLocaleDateString())
-      return makeBoard(solve_once(date.getMonth() + 1, date.getDate(), variant))
+      return makeBoard(solve_once(BigInt(date.getTime()), variant))
     }
 
     async function run() {
@@ -197,6 +215,8 @@
       let variant = vp.value
       if(variant === "3") {
         getSquareText = getTetrominoSquareText
+      } else if (variant === "4") {
+        getSquareText = getWeekdaySquareText
       } else {
         getSquareText = getStandardSquareText        
       }      

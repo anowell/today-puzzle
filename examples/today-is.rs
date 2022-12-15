@@ -1,5 +1,5 @@
 use anyhow::Result;
-use chrono::{Datelike, Days, Local, NaiveDate};
+use chrono::{Datelike, Days, Local, NaiveDate, Utc};
 use clap::Parser;
 use std::str::FromStr;
 use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday};
@@ -70,9 +70,10 @@ impl FromStr for LazyDate {
         let d = match NaiveDate::parse_from_str(s, "%Y-%m-%d") {
             Ok(d) => d,
             Err(err) => {
-                // Prepend 2020 since it's a leap year
-                let s2020 = format!("2020-{}", s);
-                NaiveDate::parse_from_str(&s2020, "%Y-%m-%d").map_err(|_| err)?
+                // Prepend the current year
+                let year = Utc::now().year();
+                let maybe_ymd = format!("{}-{}", year, s);
+                NaiveDate::parse_from_str(&maybe_ymd, "%Y-%m-%d").map_err(|_| err)?
             }
         };
 

@@ -2,7 +2,7 @@ use anyhow::Result;
 use chrono::{Datelike, Days, Local, NaiveDate};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant};
+use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -44,6 +44,7 @@ enum VariantOpt {
     CreaMakerspace,
     JarringWords,
     Tetromino,
+    Weekday,
 }
 
 // Date structure that we can parse as either M-D or Y-M-D
@@ -118,6 +119,7 @@ fn solve_and_print(variant: VariantOpt, LazyDate(date): LazyDate, print: Print) 
             JarringWords::board(date).solve(&JarringWords::pieces(), only_first)
         }
         VariantOpt::Tetromino => Tetromino::board(date).solve(&Tetromino::pieces(), only_first),
+        VariantOpt::Weekday => Weekday::board(date).solve(&Weekday::pieces(), only_first),
     };
 
     for solution in &solutions {

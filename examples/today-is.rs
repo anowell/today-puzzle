@@ -7,9 +7,9 @@ use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromin
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// Date to solve in M-D format [default: today]
+    /// Date to solve in Y-M-D or M-D format [default: today]
     #[arg(short, long)]
-    date: Option<MonthDay>,
+    date: Option<LazyDate>,
 
     /// Count solutions for every day of the year
     #[arg(short, long)]
@@ -46,29 +46,36 @@ enum VariantOpt {
     Tetromino,
 }
 
+// Date structure that we can parse as either M-D or Y-M-D
 #[derive(Clone, Copy, Debug)]
-struct MonthDay(u32, u32);
+struct LazyDate(NaiveDate);
 
-impl MonthDay {
-    fn today() -> MonthDay {
+impl LazyDate {
+    fn today() -> LazyDate {
         let d = Local::now().date_naive();
-        MonthDay(d.month(), d.day())
+        LazyDate(d)
     }
 }
 
-impl From<NaiveDate> for MonthDay {
-    fn from(d: NaiveDate) -> MonthDay {
-        MonthDay(d.month(), d.day())
+impl From<NaiveDate> for LazyDate {
+    fn from(d: NaiveDate) -> LazyDate {
+        LazyDate(d)
     }
 }
 
-impl FromStr for MonthDay {
+impl FromStr for LazyDate {
     type Err = chrono::ParseError;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        // Prepend 2020 since it's a leap year
-        let s2020 = format!("2020-{}", s);
-        let d = NaiveDate::parse_from_str(&s2020, "%Y-%m-%d")?;
-        Ok(MonthDay(d.month(), d.day()))
+        let d = match NaiveDate::parse_from_str(s, "%Y-%m-%d") {
+            Ok(d) => d,
+            Err(err) => {
+                // Prepend 2020 since it's a leap year
+                let s2020 = format!("2020-{}", s);
+                NaiveDate::parse_from_str(&s2020, "%Y-%m-%d").map_err(|_| err)?
+            }
+        };
+
+        Ok(LazyDate(d))
     }
 }
 
@@ -82,17 +89,17 @@ fn main() -> Result<()> {
             d = d.checked_add_days(Days::new(1)).unwrap();
         }
     } else {
-        let d = args.date.unwrap_or_else(MonthDay::today);
+        let d = args.date.unwrap_or_else(LazyDate::today);
         solve_and_print(args.variant, d, args.print);
     }
 
     Ok(())
 }
 
-fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: Print) {
+fn solve_and_print(variant: VariantOpt, LazyDate(date): LazyDate, print: Print) {
     match print {
         Print::Count | Print::Check => {}
-        _ => println!("**** {:02}-{:02} ****", month, day),
+        _ => println!("**** {:02}-{:02} ****", date.month(), date.day()),
     }
 
     let only_first = match print {
@@ -100,7 +107,6 @@ fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: P
         Print::All | Print::Count | Print::Summary => false,
     };
 
-    let date = NaiveDate::from_ymd_opt(2020, month, day).unwrap();
     let solutions = match variant {
         VariantOpt::DragonFjord => {
             DragonFjord::board(date).solve(&DragonFjord::pieces(), only_first)
@@ -128,12 +134,12 @@ fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: P
     match print {
         Print::First => {}
         Print::Check if solutions.is_empty() => {
-            println!("{:02}-{:02} has NO solutions", month, day);
+            println!("{:02}-{:02} has NO solutions", date.month(), date.day());
             std::process::exit(0)
         }
-        Print::Check => println!("{:02}-{:02} has solutions", month, day),
+        Print::Check => println!("{:02}-{:02} has solutions", date.month(), date.day()),
         Print::All | Print::Summary | Print::Count => {
-            println!("{:02}-{:02} has {} solutions", month, day, solutions.len())
+            println!("{:02}-{:02} has {} solutions", date.month(), date.day(), solutions.len())
         }
     }
 }

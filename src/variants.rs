@@ -214,27 +214,13 @@ pub(crate) fn tetromino_bitboard_from_date(d: NaiveDate) -> BitBoard {
 
 /// Generates a weekday bitboard with only the month, day, and weekday cleared
 pub(crate) fn weekday_bitboard_from_date(d: NaiveDate) -> BitBoard {
-    let month_part = match d.month() {
-        m @ 1..=6 => 1 << (16 - m),
-        m @ 7..=12 => 1 << (14 - m),
-        _ => unreachable!("Invalid month"),
-    };
-    let day_part = match d.day() {
-        d @ 1..=7 => 1 << (48 - d),
-        d @ 8..=14 => 1 << (47 - d),
-        d @ 15..=21 => 1 << (46 - d),
-        d @ 22..=28 => 1 << (45 - d),
-        d @ 29..=31 => 1 << (44 - d),
-        _ => unreachable!("Invalid day"),
-    };
-
     let dow_part = match d.weekday().num_days_from_sunday() {
         d @ 0..=3 => 1 << (12 - d),
         d @ 4..=6 => 1 << (7 - d),
         _ => unreachable!("Invalid day of week"),
     };
 
-    BitBoard(!((month_part << 48) | day_part | dow_part))
+    standard_bitboard_from_date(d) & BitBoard(!dow_part)
 }
 
 

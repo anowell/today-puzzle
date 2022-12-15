@@ -172,3 +172,47 @@ pub(crate) fn tetromino_bitboard_from_date(d: NaiveDate) -> BitBoard {
 
     BitBoard(!((month_part << 48) | day_part))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn test_date() -> NaiveDate {
+        chrono::NaiveDate::from_ymd_opt(20, 12, 1).unwrap()
+    }
+
+    fn assert_solution(solution: Solution, range: impl Iterator<Item = char>) {
+        for letter in range {
+            assert!(
+                solution.to_string().contains(letter),
+                "\n{}\nsolution missing piece {}",
+                solution,
+                letter
+            )
+        }
+    }
+
+    #[test]
+    fn dragon_fjord() {
+        let solution = DragonFjord::solve_once(test_date()).expect("did not find solution");
+        assert_solution(solution, 'A'..='H')
+    }
+
+    #[test]
+    fn jarring_words() {
+        let solution = JarringWords::solve_once(test_date()).expect("did not find solution");
+        assert_solution(solution, 'A'..='H')
+    }
+
+    #[test]
+    fn crea_makerspace() {
+        let solution = CreaMakerspace::solve_once(test_date()).expect("did not find solution");
+        assert_solution(solution, 'A'..='H')
+    }
+
+    #[test]
+    fn tetromino() {
+        let solution = Tetromino::solve_once(test_date()).expect("did not find solution");
+        assert_solution(solution, 'A'..='I')
+    }
+}

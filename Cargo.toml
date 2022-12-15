@@ -26,3 +26,8 @@ wee_alloc = { version = "0.4.5", optional = true }
 [dev-dependencies]
 anyhow = "1.0.66"
 clap = { version = "4.0.29", features = ["derive"] }
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bench]]
+name = "bitpiece_bench"
+harness = false

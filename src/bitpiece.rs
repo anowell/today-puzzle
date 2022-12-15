@@ -120,16 +120,14 @@ impl BitPiece {
         bp
     }
 
-    /// Creates an 8x8 bitboard with the piece at a specific coordinate
+    #[inline]
     pub fn to_bitboard(self, x: usize, y: usize) -> BitBoard {
-        let mut bp = BitBoard::new(0);
-        for i in 0..4 {
-            let seg = (self.0 & (0xF << (4 * i))) >> (4 * i);
-            if seg != 0 {
-                bp |= BitBoard::new((seg as u64) << (8 * (y + i) + x));
-            }
-        }
-        bp
+        let val = self.0 as u64;
+        let mut bb = val & 0xF;
+        bb |= (val & 0xF0) << 4;
+        bb |= (val & 0xF00) << 8;
+        bb |= (val & 0xF000) << 12;
+        BitBoard::new(bb << (y * 8 + x))
     }
 }
 
@@ -161,5 +159,21 @@ mod tests {
         assert_eq!(BitPiece(0x137F), BitPiece(0x8CEF).flip());
         assert_eq!(BitPiece(0x1248), BitPiece(0x8421).flip());
         assert_eq!(BitPiece(0x1111), BitPiece(0x1111).flip());
+    }
+
+    #[test]
+    fn piece_to_bitboard() {
+        assert_eq!(BitPiece(0x23).to_bitboard(0, 0), BitBoard::new(0x0203));
+        assert_eq!(BitPiece(0x23).to_bitboard(1, 0), BitBoard::new(0x406));
+        assert_eq!(BitPiece(0x23).to_bitboard(0, 1), BitBoard::new(0x020300));
+        assert_eq!(BitPiece(0x23).to_bitboard(1, 1), BitBoard::new(0x040600));
+        assert_eq!(
+            BitPiece(0xFFFF).to_bitboard(0, 0),
+            BitBoard::new(0x0F0F0F0F)
+        );
+        assert_eq!(
+            BitPiece(0xAAAA).to_bitboard(4, 4),
+            BitBoard::new(0xA0A0A0A000000000)
+        );
     }
 }

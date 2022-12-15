@@ -76,18 +76,26 @@ impl<const N: usize> Board<N> {
                     let piece_bb = variation.to_bitboard(x, y);
 
                     // Check if piece_bb can be placed on the board without overlap
-                    if piece_bb.intersects(self.combined) {
-                        // Create a new board that adds the piece
-                        let mut new_board = *self;
-                        new_board.pieces[self.piece_count] = piece_bb;
-                        new_board.piece_count += 1;
-                        new_board.combined |= piece_bb;
-                        buf.push(new_board);
+                    if !piece_bb.intersects(self.combined) {
+                        let new_combined = self.combined | piece_bb;
+
+                        // Disregard boards that have gaps too small to add a piece into
+                        // This significantly reduces the number of piece placements evaluated
+                        // Experimentally a 5-10x speedup from original implementation
+                        if !new_combined.has_small_gaps() {
+                            // Create a new board that adds the piece
+                            let mut new_board = *self;
+                            new_board.pieces[self.piece_count] = piece_bb;
+                            new_board.piece_count += 1;
+                            new_board.combined = new_combined;
+                            buf.push(new_board);
+                        }
                     }
                 }
             }
         }
     }
+
 
     pub fn is_solved(&self) -> bool {
         self.piece_count == N

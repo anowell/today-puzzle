@@ -5,9 +5,9 @@ pub use board::Board;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-mod bitboard;
-mod bitpiece;
-mod board;
+pub mod bitboard;
+pub mod bitpiece;
+pub mod board;
 pub mod piece;
 pub mod variants;
 

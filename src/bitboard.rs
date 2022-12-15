@@ -1,8 +1,6 @@
 use std::fmt;
 use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, Mul, Not};
 
-
-
 /// A good old-fashioned bitboard (borrowed from chess crate)
 ///
 /// Board is shaped as follows:
@@ -16,8 +14,14 @@ use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, M
 /// 29 30 31 XX XX XX XX XX
 /// ```
 ///
-#[derive(PartialEq, Eq, PartialOrd, Clone, Copy, Debug, Default)]
+#[derive(PartialEq, Eq, PartialOrd, Clone, Copy, Default)]
 pub struct BitBoard(pub u64);
+
+impl fmt::Debug for BitBoard {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "BitBoard(0x{:04x})", self.0)
+    }
+}
 
 // Impl BitAnd
 impl BitAnd for BitBoard {
@@ -251,6 +255,12 @@ impl fmt::Display for BitBoard {
     }
 }
 
+// This pattern, aligned to the LSB of 8x8 bitboard
+// 0 1 0
+// 1 0 1
+// 0 1 0
+const NEIGHBOR_PATTERN: u64 = 0x020502;
+
 impl BitBoard {
     /// Construct a new bitboard from a u64
     #[inline]
@@ -260,6 +270,55 @@ impl BitBoard {
 
     #[inline]
     pub fn intersects(&self, other: BitBoard) -> bool {
-        self.0 & other.0 == 0
+        self.0 & other.0 != 0
+    }
+
+    /// Returns true if the board has any gaps that are too small for a piece
+    ///
+    /// This allows the solve algorithms to evaluate fewer placements.
+    /// Experimentally, this results in up to a 10x improvement on fully solving a puzzle.
+    ///
+    /// Currently, this only checks for single-square gaps.
+    /// A subsequent attempt to detect gaps with at least 3 connected squares
+    /// doubled the complexity, but solving a puzzle tended to be 10% slower
+    /// than using this simpler implementation.
+    pub fn has_small_gaps(self) -> bool {
+        for i in 0..64 {
+            // For any square that empty, shift the NEIGHBOR_PATTERN to surround that square.
+            // Then BitAnd the resulting pattern with inverse of the board
+            // Any `1`s in the resulting pattern indicate other gaps connected to this square.
+            if self.0 & (1 << i) == 0 {
+                let neighbor_pattern = if i < 9 {
+                    NEIGHBOR_PATTERN >> (9 - i as u32)
+                } else {
+                    NEIGHBOR_PATTERN << (i as u32 - 9)
+                };
+                let neighbors = (!self.0) & neighbor_pattern;
+                if neighbors == 0 {
+                    return true;
+                }
+            }
+        }
+        false
+    }
+}
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn has_small_gaps() {
+        assert!(!BitBoard(0x0).has_small_gaps());
+        assert!(!BitBoard(0xFFFFFFFFFFFFFFFF).has_small_gaps());
+        assert!(!BitBoard(0xFE).has_small_gaps());
+        assert!(!BitBoard(0xF0).has_small_gaps());
+        assert!(!BitBoard(0xAAAAAAAAAAAAAAAA).has_small_gaps());
+        assert!(!BitBoard(0x5555555555555555).has_small_gaps());
+        assert!(!BitBoard(0xA5A5A5A5A5A5A5A5).has_small_gaps());
+        assert!(BitBoard(0xFFFE).has_small_gaps());
+        assert!(BitBoard(0xAA55AA55AA55AA55).has_small_gaps());
+        assert!(BitBoard(0xFFFFFFF7FFFFFFFF).has_small_gaps());
     }
 }

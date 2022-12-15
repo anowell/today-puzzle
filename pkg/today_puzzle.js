@@ -70,15 +70,14 @@ function getArrayU64FromWasm0(ptr, len) {
 }
 /**
 * Finds the first solution for a given variant, and returns an array of piece bitmaps
-* @param {number} month
-* @param {number} day
+* @param {bigint} epoch_ms
 * @param {number} variant
 * @returns {BigUint64Array}
 */
-export function solve_once(month, day, variant) {
+export function solve_once(epoch_ms, variant) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        wasm.solve_once(retptr, month, day, variant);
+        wasm.solve_once(retptr, epoch_ms, variant);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         var r2 = getInt32Memory0()[retptr / 4 + 2];

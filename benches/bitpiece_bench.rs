@@ -5,7 +5,7 @@ pub fn bitpiece_to_bitboard(c: &mut Criterion) {
     let mut group = c.benchmark_group("to_bitboard");
     let piece = BitPiece::new(0x33);
 
-    for i in [0,3,8].iter() {
+    for i in [0, 3, 8].iter() {
         group.bench_with_input(BenchmarkId::new("bitboard1", i), i, |b, i| {
             b.iter(|| to_bitboard1(black_box(piece), *i, *i))
         });

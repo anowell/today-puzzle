@@ -2,7 +2,7 @@ use anyhow::Result;
 use chrono::{Datelike, Days, Local, NaiveDate};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::variants::{Variant, DragonFjord, CreaMakerspace, JarringWords, Tetromino};
+use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -21,7 +21,7 @@ struct Args {
 
     /// Puzzle variant
     #[arg(short, long, value_enum, default_value_t=VariantOpt::DragonFjord)]
-    variant: VariantOpt
+    variant: VariantOpt,
 }
 
 #[derive(clap::ValueEnum, Clone, Copy, Debug)]
@@ -102,9 +102,15 @@ fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: P
 
     let date = NaiveDate::from_ymd_opt(2020, month, day).unwrap();
     let solutions = match variant {
-        VariantOpt::DragonFjord => DragonFjord::board(date).solve(&DragonFjord::pieces(), only_first),
-        VariantOpt::CreaMakerspace => CreaMakerspace::board(date).solve(&CreaMakerspace::pieces(), only_first),
-        VariantOpt::JarringWords => JarringWords::board(date).solve(&JarringWords::pieces(), only_first),
+        VariantOpt::DragonFjord => {
+            DragonFjord::board(date).solve(&DragonFjord::pieces(), only_first)
+        }
+        VariantOpt::CreaMakerspace => {
+            CreaMakerspace::board(date).solve(&CreaMakerspace::pieces(), only_first)
+        }
+        VariantOpt::JarringWords => {
+            JarringWords::board(date).solve(&JarringWords::pieces(), only_first)
+        }
         VariantOpt::Tetromino => Tetromino::board(date).solve(&Tetromino::pieces(), only_first),
     };
 
@@ -131,4 +137,3 @@ fn solve_and_print(variant: VariantOpt, MonthDay(month, day): MonthDay, print: P
         }
     }
 }
-

@@ -303,7 +303,6 @@ impl BitBoard {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

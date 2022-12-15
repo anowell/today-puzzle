@@ -96,7 +96,6 @@ impl<const N: usize> Board<N> {
         }
     }
 
-
     pub fn is_solved(&self) -> bool {
         self.piece_count == N
     }

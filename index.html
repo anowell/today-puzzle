@@ -139,7 +139,6 @@
       return date.toISOString().split('T')[0]
     }
 
-
     function clearViz() {
       updateViz(0n)
     }
@@ -189,10 +188,10 @@
     }
 
     function solveAndUpdate() {
+      // clearViz()
       let dp = document.getElementById("date-picker")
       let vp = document.getElementById("variant-picker")
 
-      clearViz()
       const offset = dp.valueAsDate.getTimezoneOffset()
       let newDate = new Date(dp.valueAsDate.getTime() + (offset * 60 * 1000))
       let variant = vp.value

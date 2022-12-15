@@ -47,7 +47,7 @@ fn to_bitboard2(bp: BitPiece, x: usize, y: usize) -> BitBoard {
             bb |= BitBoard::new((seg as u64) << (8 * i));
         }
     }
-    BitBoard::new(bb.0 << y * 8 + x)
+    BitBoard::new(bb.0 << (y * 8 + x))
 }
 
 fn to_bitboard3(bp: BitPiece, x: usize, y: usize) -> BitBoard {
@@ -56,7 +56,7 @@ fn to_bitboard3(bp: BitPiece, x: usize, y: usize) -> BitBoard {
         let seg = (bp.0 & (0xF << (4 * i))) >> (4 * i);
         bb |= BitBoard::new((seg as u64) << (8 * i));
     }
-    BitBoard::new(bb.0 << y * 8 + x)
+    BitBoard::new(bb.0 << (y * 8 + x))
 }
 
 fn to_bitboard4(bp: BitPiece, x: usize, y: usize) -> BitBoard {
@@ -65,7 +65,7 @@ fn to_bitboard4(bp: BitPiece, x: usize, y: usize) -> BitBoard {
         let seg = ((bp.0 & (0xF << (4 * i))) as u64) << (4 * i);
         bb |= BitBoard::new(seg);
     }
-    BitBoard::new(bb.0 << y * 8 + x)
+    BitBoard::new(bb.0 << (y * 8 + x))
 }
 
 /// Creates an 8x8 bitboard with the piece at a specific coordinate
@@ -75,5 +75,5 @@ fn to_bitboard5(bp: BitPiece, x: usize, y: usize) -> BitBoard {
     bb |= (val & 0xF0) << 4;
     bb |= (val & 0xF00) << 8;
     bb |= (val & 0xF000) << 12;
-    BitBoard::new(bb << y * 8 + x)
+    BitBoard::new(bb << (y * 8 + x))
 }

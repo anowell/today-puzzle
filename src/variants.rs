@@ -54,7 +54,6 @@ pub const BITBOARD_TETROMINO: BitBoard = BitBoard(0x0303_0101_0101_F1FF);
 /// ```
 pub const BITBOARD_WEEKDAY: BitBoard = BitBoard(0x0303_0101_0101_01F1);
 
-
 pub trait Variant<const N: usize>: Sized {
     fn board(date: NaiveDate) -> Board<N>;
     fn pieces() -> [Piece; N];
@@ -223,7 +222,6 @@ pub(crate) fn weekday_bitboard_from_date(d: NaiveDate) -> BitBoard {
     standard_bitboard_from_date(d) & BitBoard(!dow_part)
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -240,9 +238,7 @@ mod tests {
         for letter in range {
             assert!(
                 solution.to_string().contains(letter),
-                "\n{}\nsolution missing piece {}",
-                solution,
-                letter
+                "\n{solution}\nsolution missing piece {letter}"
             )
         }
     }
@@ -279,8 +275,13 @@ mod tests {
 
     #[test]
     fn weekday_board() {
-        assert_eq!(!weekday_bitboard_from_date(ymd(2022, 1, 8)), BitBoard(0x8000008000000002)); // Sat
-        assert_eq!(!weekday_bitboard_from_date(ymd(2020, 1, 8)), BitBoard(0x8000008000000200)); // Wed
+        assert_eq!(
+            !weekday_bitboard_from_date(ymd(2022, 1, 8)),
+            BitBoard(0x8000008000000002)
+        ); // Sat
+        assert_eq!(
+            !weekday_bitboard_from_date(ymd(2020, 1, 8)),
+            BitBoard(0x8000008000000200)
+        ); // Wed
     }
-
 }

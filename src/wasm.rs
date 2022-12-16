@@ -7,7 +7,9 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 /// Finds the first solution for a given variant, and returns an array of piece bitmaps
 pub fn solve_once(epoch_ms: i64, variant: u32) -> Result<Box<[u64]>, String> {
-    let date = NaiveDateTime::from_timestamp_millis(epoch_ms).unwrap().date();
+    let date = NaiveDateTime::from_timestamp_millis(epoch_ms)
+        .unwrap()
+        .date();
     let solution = match variant {
         0 => DragonFjord::solve_once(date),
         1 => JarringWords::solve_once(date),
@@ -24,10 +26,7 @@ pub fn solve_once(epoch_ms: i64, variant: u32) -> Result<Box<[u64]>, String> {
             .map(|bitboard| bitboard.0)
             .collect::<Vec<u64>>()
             .into_boxed_slice()),
-        None => Err(format!(
-            "No solution for variant {} on {}",
-            variant, date
-        )),
+        None => Err(format!("No solution for variant {variant} on {date}")),
     }
 }
 

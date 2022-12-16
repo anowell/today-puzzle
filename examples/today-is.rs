@@ -2,7 +2,9 @@ use anyhow::Result;
 use chrono::{Datelike, Days, Local, NaiveDate, Utc};
 use clap::Parser;
 use std::str::FromStr;
-use today_puzzle::variants::{CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday};
+use today_puzzle::variants::{
+    CreaMakerspace, DragonFjord, JarringWords, Tetromino, Variant, Weekday,
+};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -72,7 +74,7 @@ impl FromStr for LazyDate {
             Err(err) => {
                 // Prepend the current year
                 let year = Utc::now().year();
-                let maybe_ymd = format!("{}-{}", year, s);
+                let maybe_ymd = format!("{year}-{s}");
                 NaiveDate::parse_from_str(&maybe_ymd, "%Y-%m-%d").map_err(|_| err)?
             }
         };
@@ -126,10 +128,10 @@ fn solve_and_print(variant: VariantOpt, LazyDate(date): LazyDate, print: Print) 
     for solution in &solutions {
         match print {
             Print::First | Print::Summary => {
-                println!("{}", solution);
+                println!("{solution}");
                 break;
             }
-            Print::All => println!("{}", solution),
+            Print::All => println!("{solution}"),
             Print::Count | Print::Check => {}
         }
     }
@@ -142,7 +144,12 @@ fn solve_and_print(variant: VariantOpt, LazyDate(date): LazyDate, print: Print) 
         }
         Print::Check => println!("{:02}-{:02} has solutions", date.month(), date.day()),
         Print::All | Print::Summary | Print::Count => {
-            println!("{:02}-{:02} has {} solutions", date.month(), date.day(), solutions.len())
+            println!(
+                "{:02}-{:02} has {} solutions",
+                date.month(),
+                date.day(),
+                solutions.len()
+            )
         }
     }
 }

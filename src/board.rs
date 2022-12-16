@@ -119,10 +119,10 @@ impl<const N: usize> fmt::Display for Board<N> {
         }
         let s = map
             .chunks(8)
-            .map(|w| w.iter().map(|c| format!("{} ", c)).collect())
+            .map(|w| w.iter().map(|c| format!("{c} ")).collect())
             .collect::<Vec<String>>()
             .join("\n");
-        write!(f, "{}", s)
+        write!(f, "{s}")
     }
 }
 
@@ -139,9 +139,9 @@ impl fmt::Display for Solution {
         }
         let s = map
             .chunks(8)
-            .map(|w| w.iter().map(|c| format!("{} ", c)).collect())
+            .map(|w| w.iter().map(|c| format!("{c} ")).collect())
             .collect::<Vec<String>>()
             .join("\n");
-        write!(f, "{}", s)
+        write!(f, "{s}")
     }
 }

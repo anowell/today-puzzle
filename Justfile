@@ -9,8 +9,8 @@ run *args='':
 serve:
   miniserve --index index.html -- public
 
-lint:
-  cargo clippy --all-features --all-targets -- -D warnings
+lint *args='':
+  cargo clippy --fix --all-features --all-targets $@ -- -D warnings
 
 flamegraph:
   #!/usr/bin/env sh

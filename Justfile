@@ -6,6 +6,9 @@ wasm:
 run *args='':
   cargo run --release --example today-is -- $@
 
+run-simd *args='':
+  cargo run --release --features simd --example today-is -- $@
+
 serve:
   miniserve --index index.html -- public
 

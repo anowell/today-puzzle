@@ -1,3 +1,5 @@
+#![cfg_attr(feature="simd", feature(portable_simd))]
+
 pub use board::Board;
 
 // Lightweight allocator for smaller wasm size

@@ -1,6 +1,9 @@
 use std::fmt;
 use std::ops::{BitAnd, BitAndAssign, BitOr, BitOrAssign, BitXor, BitXorAssign, Mul, Not};
 
+#[cfg(feature="simd")]
+use std::simd::{Simd, SimdUint};
+
 /// A good old-fashioned bitboard (borrowed from chess crate)
 ///
 /// Board is shaped as follows:
@@ -260,6 +263,7 @@ impl fmt::Display for BitBoard {
 // 1 0 1
 // 0 1 0
 const NEIGHBOR_PATTERN: u64 = 0x020502;
+const PATTERNS: [u64; 64] = patterns();
 
 impl BitBoard {
     /// Construct a new bitboard from a u64
@@ -282,18 +286,14 @@ impl BitBoard {
     /// A subsequent attempt to detect gaps with at least 3 connected squares
     /// doubled the complexity, but solving a puzzle tended to be 10% slower
     /// than using this simpler implementation.
+    #[cfg(not(feature="simd"))]
     pub fn has_small_gaps(self) -> bool {
         for i in 0..64 {
             // For any square that empty, shift the NEIGHBOR_PATTERN to surround that square.
             // Then BitAnd the resulting pattern with inverse of the board
             // Any `1`s in the resulting pattern indicate other gaps connected to this square.
             if self.0 & (1 << i) == 0 {
-                let neighbor_pattern = if i < 9 {
-                    NEIGHBOR_PATTERN >> (9 - i as u32)
-                } else {
-                    NEIGHBOR_PATTERN << (i as u32 - 9)
-                };
-                let neighbors = (!self.0) & neighbor_pattern;
+                let neighbors = (!self.0) & PATTERNS[i];
                 if neighbors == 0 {
                     return true;
                 }
@@ -301,6 +301,43 @@ impl BitBoard {
         }
         false
     }
+
+    // SIMD version of the above function
+    // Chose 2 lanes for compat with WASM, but in theory 4 lanes is possible
+    // Unfortunately, this measured about 25% slower than w/o Simd
+    // and flamegraph shows half of this function (20% of total time) is in reduce_min
+    #[cfg(feature="simd")]
+    pub fn has_small_gaps(self) -> bool {
+        let bb = Simd::from([self.0; 2]);
+        let mut i = 0;
+        while i < 64 {
+            let chunk = Simd::from([i, i + 1]);
+            let bits = bb & (Simd::from([1; 2]) << chunk.cast::<u64>());
+
+            if bits.reduce_min() == 0 {
+                let neighbors = !bb & Simd::from([PATTERNS[i], PATTERNS[i + 1]]);
+                if neighbors.reduce_min() == 0 {
+                    return true;
+                }
+            }
+            i += 2;
+        }
+        false
+    }
+}
+
+const fn patterns() -> [u64; 64] {
+    let mut i = 0;
+    let mut patterns = [0; 64];
+    while i < 64 {
+        if i < 9 {
+            patterns[i] = NEIGHBOR_PATTERN >> (9 - i as u32)
+        } else {
+            patterns[i] = NEIGHBOR_PATTERN << (i as u32 - 9)
+        }
+        i += 1;
+    }
+    patterns
 }
 
 #[cfg(test)]
